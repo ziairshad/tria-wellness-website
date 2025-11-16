@@ -27,7 +27,7 @@ export function Navigation() {
               <a href="#instructors" className="font-sans text-muted-foreground hover:text-foreground transition-colors">Instructors</a>
               <a href="#services" className="font-sans text-muted-foreground hover:text-foreground transition-colors">Services</a>
             </div>
-            <Button asChild className="font-sans hidden sm:flex">
+            <Button asChild className="font-sans">
               <a href="#classes">
                 Book Session
               </a>
@@ -85,13 +85,6 @@ export function Navigation() {
               >
                 Services
               </a>
-              <div className="px-3 py-2">
-                <Button asChild className="font-sans w-full" onClick={() => setIsMenuOpen(false)}>
-                  <a href="#classes">
-                    Book Session
-                  </a>
-                </Button>
-              </div>
             </div>
           </div>
         )}
