@@ -220,15 +220,15 @@ export function TestimonialsCarousel() {
         </motion.div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Hidden on mobile */}
       <motion.button
         onClick={prevSlide}
         disabled={currentIndex === 0}
-        className="absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10"
+        className="absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </motion.button>
@@ -236,11 +236,11 @@ export function TestimonialsCarousel() {
       <motion.button
         onClick={nextSlide}
         disabled={currentIndex === maxIndex}
-        className="absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10"
+        className="absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </motion.button>
