@@ -35,7 +35,7 @@ export function Hero() {
           {/* Announcement */}
           <div className="animate-fade-in">
             <Announcement className="[&>span]:text-white [&>span]:hover:text-white hover:[&>span]:text-white [&_.bg-secondary]:bg-transparent [&_.bg-secondary]:border [&_.bg-secondary]:border-white [&_.bg-secondary]:text-white">
-              Grand Opening - First Month 50% Off All Classes
+              First Month 50% Off All Classes
             </Announcement>
           </div>
 
