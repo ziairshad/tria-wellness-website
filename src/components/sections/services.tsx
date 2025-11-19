@@ -43,11 +43,11 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-accent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6">Our Services</h2>
-          <p className="text-lg font-sans text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 text-accent-foreground">Our Services</h2>
+          <p className="text-lg font-sans text-accent-foreground/80 max-w-2xl mx-auto">
             Holistic wellness offerings designed to nurture your mind, body, and spirit
           </p>
         </div>
@@ -60,7 +60,7 @@ export function Services() {
 
 
         <div className="text-center mt-16">
-          <Button asChild size="lg" className="px-8">
+          <Button asChild size="lg" className="px-8 bg-accent-foreground text-accent hover:bg-accent-foreground/90">
             <a href="#classes">
               Explore Our Services
             </a>

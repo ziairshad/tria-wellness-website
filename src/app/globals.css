@@ -103,6 +103,9 @@
   --background: oklch(0.92 0.01 85);
   --foreground: oklch(0.25 0.01 120);
 
+  /* CHARCOAL BLACK - #1D1D1D */
+  --charcoal: oklch(0.15 0.01 120);
+
   /* EUCALYPTUS GREEN - #C0CBBD as card background */
   --card: oklch(0.82 0.02 120);
   --card-foreground: oklch(0.25 0.01 120);
@@ -213,4 +216,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom styles for DomeGallery scroll lock */
+.dg-scroll-lock {
+  overflow: hidden;
 }
