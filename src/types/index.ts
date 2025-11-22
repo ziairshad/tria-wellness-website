@@ -46,3 +46,26 @@ export interface ServiceFeature {
   iconBg: string;
   iconColor: string;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  authorImage?: string;
+  publishDate: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  featuredImage: string;
+  featured?: boolean;
+}
+
+export interface BlogCategory {
+  name: string;
+  slug: string;
+  description: string;
+  color: string;
+}
