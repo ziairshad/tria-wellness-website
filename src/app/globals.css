@@ -98,109 +98,109 @@
 :root {
   --radius: 0.625rem;
 
-  /* Tria Brand Colors */
+  /* Tria Brand Colors - Exact conversions from brand guidelines */
   /* DRIFT WHITE - #E6E3DC as background */
-  --background: oklch(0.92 0.01 85);
-  --foreground: oklch(0.25 0.01 120);
+  --background: oklch(0.9089 0.0107 88.38);
+  --foreground: oklch(0.1216 0.0038 286.75);
 
   /* CHARCOAL BLACK - #1D1D1D */
-  --charcoal: oklch(0.15 0.01 120);
+  --charcoal: oklch(0.1216 0.0038 286.75);
 
   /* EUCALYPTUS GREEN - #C0CBBD as card background */
-  --card: oklch(0.82 0.02 120);
-  --card-foreground: oklch(0.25 0.01 120);
+  --card: oklch(0.8086 0.0186 131.93);
+  --card-foreground: oklch(0.1216 0.0038 286.75);
 
   /* Light card background for popovers */
-  --popover: oklch(0.95 0.01 85);
-  --popover-foreground: oklch(0.25 0.01 120);
+  --popover: oklch(0.9089 0.0107 88.38);
+  --popover-foreground: oklch(0.1216 0.0038 286.75);
 
   /* DEEP EUCALYPTUS - #5A6E53 as primary */
-  --primary: oklch(0.45 0.05 120);
-  --primary-foreground: oklch(0.95 0.01 85);
+  --primary: oklch(0.4493 0.0312 131.93);
+  --primary-foreground: oklch(0.9089 0.0107 88.38);
 
   /* ZEN SAND - #E0D4C8 as secondary */
-  --secondary: oklch(0.87 0.02 65);
-  --secondary-foreground: oklch(0.25 0.01 120);
+  --secondary: oklch(0.8508 0.0196 66.89);
+  --secondary-foreground: oklch(0.1216 0.0038 286.75);
 
   /* Muted using lighter eucalyptus */
-  --muted: oklch(0.82 0.02 120);
-  --muted-foreground: oklch(0.45 0.05 120);
+  --muted: oklch(0.8086 0.0186 131.93);
+  --muted-foreground: oklch(0.4493 0.0312 131.93);
 
   /* CLAY BROWN - #A85C42 as accent */
-  --accent: oklch(0.52 0.08 45);
-  --accent-foreground: oklch(0.95 0.01 85);
+  --accent: oklch(0.5382 0.0677 48.56);
+  --accent-foreground: oklch(0.9089 0.0107 88.38);
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  /* Subtle borders with eucalyptus tint */
-  --border: oklch(0.75 0.02 120);
-  --input: oklch(0.75 0.02 120);
-  --ring: oklch(0.45 0.05 120);
+  /* Subtle borders with exact eucalyptus tint */
+  --border: oklch(0.8086 0.0186 131.93);
+  --input: oklch(0.8086 0.0186 131.93);
+  --ring: oklch(0.4493 0.0312 131.93);
 
-  --chart-1: oklch(0.45 0.05 120);
-  --chart-2: oklch(0.52 0.08 45);
-  --chart-3: oklch(0.82 0.02 120);
-  --chart-4: oklch(0.87 0.02 65);
-  --chart-5: oklch(0.92 0.01 85);
+  --chart-1: oklch(0.4493 0.0312 131.93);
+  --chart-2: oklch(0.5382 0.0677 48.56);
+  --chart-3: oklch(0.8086 0.0186 131.93);
+  --chart-4: oklch(0.8508 0.0196 66.89);
+  --chart-5: oklch(0.9089 0.0107 88.38);
 
-  --sidebar: oklch(0.95 0.01 85);
-  --sidebar-foreground: oklch(0.25 0.01 120);
-  --sidebar-primary: oklch(0.45 0.05 120);
-  --sidebar-primary-foreground: oklch(0.95 0.01 85);
-  --sidebar-accent: oklch(0.82 0.02 120);
-  --sidebar-accent-foreground: oklch(0.25 0.01 120);
-  --sidebar-border: oklch(0.75 0.02 120);
-  --sidebar-ring: oklch(0.45 0.05 120);
+  --sidebar: oklch(0.9089 0.0107 88.38);
+  --sidebar-foreground: oklch(0.1216 0.0038 286.75);
+  --sidebar-primary: oklch(0.4493 0.0312 131.93);
+  --sidebar-primary-foreground: oklch(0.9089 0.0107 88.38);
+  --sidebar-accent: oklch(0.8086 0.0186 131.93);
+  --sidebar-accent-foreground: oklch(0.1216 0.0038 286.75);
+  --sidebar-border: oklch(0.8086 0.0186 131.93);
+  --sidebar-ring: oklch(0.4493 0.0312 131.93);
 }
 
 .dark {
-  /* Dark theme using darker Tria colors */
-  /* DEEP EUCALYPTUS as dark background */
-  --background: oklch(0.25 0.02 120);
-  --foreground: oklch(0.92 0.01 85);
+  /* Dark theme using exact darker Tria brand colors */
+  /* DEEP EUCALYPTUS #5A6E53 as dark background */
+  --background: oklch(0.4493 0.0312 131.93);
+  --foreground: oklch(0.9089 0.0107 88.38);
 
-  /* Darker eucalyptus for cards */
-  --card: oklch(0.35 0.03 120);
-  --card-foreground: oklch(0.92 0.01 85);
+  /* CHARCOAL BLACK #1D1D1D for cards */
+  --card: oklch(0.1216 0.0038 286.75);
+  --card-foreground: oklch(0.9089 0.0107 88.38);
 
-  --popover: oklch(0.35 0.03 120);
-  --popover-foreground: oklch(0.92 0.01 85);
+  --popover: oklch(0.1216 0.0038 286.75);
+  --popover-foreground: oklch(0.9089 0.0107 88.38);
 
-  /* EUCALYPTUS GREEN as primary in dark */
-  --primary: oklch(0.75 0.03 120);
-  --primary-foreground: oklch(0.25 0.02 120);
+  /* EUCALYPTUS GREEN #C0CBBD as primary in dark */
+  --primary: oklch(0.8086 0.0186 131.93);
+  --primary-foreground: oklch(0.1216 0.0038 286.75);
 
-  /* Darker zen sand for secondary */
-  --secondary: oklch(0.45 0.03 65);
-  --secondary-foreground: oklch(0.92 0.01 85);
+  /* ZEN SAND #E0D4C8 as secondary in dark */
+  --secondary: oklch(0.8508 0.0196 66.89);
+  --secondary-foreground: oklch(0.1216 0.0038 286.75);
 
-  --muted: oklch(0.45 0.03 120);
-  --muted-foreground: oklch(0.75 0.02 120);
+  --muted: oklch(0.4493 0.0312 131.93);
+  --muted-foreground: oklch(0.8086 0.0186 131.93);
 
-  /* CLAY BROWN as accent in dark */
-  --accent: oklch(0.60 0.08 45);
-  --accent-foreground: oklch(0.25 0.02 120);
+  /* CLAY BROWN #A85C42 as accent in dark */
+  --accent: oklch(0.5382 0.0677 48.56);
+  --accent-foreground: oklch(0.9089 0.0107 88.38);
 
   --destructive: oklch(0.704 0.191 22.216);
 
-  --border: oklch(0.45 0.03 120);
-  --input: oklch(0.45 0.03 120);
-  --ring: oklch(0.75 0.03 120);
+  --border: oklch(0.4493 0.0312 131.93);
+  --input: oklch(0.4493 0.0312 131.93);
+  --ring: oklch(0.8086 0.0186 131.93);
 
-  --chart-1: oklch(0.75 0.03 120);
-  --chart-2: oklch(0.60 0.08 45);
-  --chart-3: oklch(0.45 0.03 120);
-  --chart-4: oklch(0.65 0.03 65);
-  --chart-5: oklch(0.35 0.02 120);
+  --chart-1: oklch(0.8086 0.0186 131.93);
+  --chart-2: oklch(0.5382 0.0677 48.56);
+  --chart-3: oklch(0.4493 0.0312 131.93);
+  --chart-4: oklch(0.8508 0.0196 66.89);
+  --chart-5: oklch(0.1216 0.0038 286.75);
 
-  --sidebar: oklch(0.25 0.02 120);
-  --sidebar-foreground: oklch(0.92 0.01 85);
-  --sidebar-primary: oklch(0.75 0.03 120);
-  --sidebar-primary-foreground: oklch(0.25 0.02 120);
-  --sidebar-accent: oklch(0.45 0.03 120);
-  --sidebar-accent-foreground: oklch(0.92 0.01 85);
-  --sidebar-border: oklch(0.45 0.03 120);
-  --sidebar-ring: oklch(0.75 0.03 120);
+  --sidebar: oklch(0.1216 0.0038 286.75);
+  --sidebar-foreground: oklch(0.9089 0.0107 88.38);
+  --sidebar-primary: oklch(0.8086 0.0186 131.93);
+  --sidebar-primary-foreground: oklch(0.1216 0.0038 286.75);
+  --sidebar-accent: oklch(0.4493 0.0312 131.93);
+  --sidebar-accent-foreground: oklch(0.9089 0.0107 88.38);
+  --sidebar-border: oklch(0.4493 0.0312 131.93);
+  --sidebar-ring: oklch(0.8086 0.0186 131.93);
 }
 
 @layer base {
