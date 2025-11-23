@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { BLOG_POSTS, BLOG_CATEGORIES } from "@/data/constants";
 import { BlogPost } from "@/types";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -116,19 +117,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             Back to Blog
           </Link>
 
-          <Badge className={categoryColor + " mb-4"}>
-            {post.category}
-          </Badge>
 
           <h1 className="font-vonca text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             {post.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-8">
-            <div className="flex items-center gap-2">
-              <User className="w-5 h-5" />
-              <span className="font-medium">{post.author}</span>
-            </div>
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
               <span>{formatDate(post.publishDate)}</span>
@@ -154,8 +148,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Featured Image */}
       <section className="px-4 mb-12">
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-[16/9] rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-t from-primary/10 to-transparent" />
+          <div className="aspect-[16/9] rounded-xl overflow-hidden">
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              width={800}
+              height={450}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
@@ -169,65 +169,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </article>
 
-      {/* Author Bio */}
-      <section className="px-4 pb-12">
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-6 bg-muted/20">
-            <div className="flex items-start gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                <span className="font-vonca text-xl font-bold text-primary">
-                  {post.author.split(' ').map(n => n[0]).join('')}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-vonca text-xl font-semibold text-foreground mb-2">
-                  {post.author}
-                </h3>
-                <p className="text-muted-foreground">
-                  {post.author === 'Sarah Chen' && 'Founder & Lead Yoga Instructor at Tria. Sarah brings over 10 years of experience in mindful movement and wellness practices.'}
-                  {post.author === 'Marcus Rivera' && 'Lead Lagree Instructor specializing in precision training and athletic performance.'}
-                  {post.author === 'Luna Martinez' && 'Wellness Specialist focused on restorative practices and holistic healing approaches.'}
-                </p>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section>
 
-      {/* Navigation */}
-      <section className="px-4 pb-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
-            {previousPost && (
-              <Link href={`/blog/${previousPost.slug}`} className="group">
-                <Card className="p-6 h-full bg-gradient-to-br from-background to-muted/20 group-hover:shadow-lg transition-shadow">
-                  <div className="flex items-center gap-2 text-primary mb-2">
-                    <ArrowLeft className="w-4 h-4" />
-                    <span className="text-sm font-medium">Previous Article</span>
-                  </div>
-                  <h3 className="font-vonca text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {previousPost.title}
-                  </h3>
-                </Card>
-              </Link>
-            )}
-
-            {nextPost && (
-              <Link href={`/blog/${nextPost.slug}`} className="group md:ml-auto">
-                <Card className="p-6 h-full bg-gradient-to-br from-background to-muted/20 group-hover:shadow-lg transition-shadow">
-                  <div className="flex items-center gap-2 text-primary mb-2 md:justify-end">
-                    <span className="text-sm font-medium">Next Article</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
-                  <h3 className="font-vonca text-lg font-semibold text-foreground group-hover:text-primary transition-colors md:text-right">
-                    {nextPost.title}
-                  </h3>
-                </Card>
-              </Link>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="px-4 pb-16">

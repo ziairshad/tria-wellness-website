@@ -54,14 +54,7 @@ export function Instructors() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {instructorsData.map((instructor, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none p-0">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={instructor.image}
-                  alt={`${instructor.name} - ${instructor.specialty}`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                />
+              <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${instructor.gradient}`}>
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-serif font-medium mb-2">{instructor.name}</h3>

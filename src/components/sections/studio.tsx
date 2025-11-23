@@ -98,14 +98,7 @@ export function Studio() {
 
           <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[600px] auto-rows-fr">
             {studioImages.map((image, index) => (
-              <div key={index} className={`relative overflow-hidden rounded-xl bg-muted ${image.className}`}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
+              <div key={index} className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 ${image.className}`}>
               </div>
             ))}
           </div>

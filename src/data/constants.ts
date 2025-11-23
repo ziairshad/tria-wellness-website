@@ -287,7 +287,7 @@ Remember, balance isn't a destination—it's a dynamic, ever-evolving dance betw
     readTime: "5 min read",
     category: "Wellness",
     tags: ["balance", "mindfulness", "wellness", "transformation"],
-    featuredImage: "/images/blog/sacred-balance.jpg",
+    featuredImage: "/images/blog/e50eff_02574f0959ea40c29d022f8a56b35c0f~mv2.webp",
     featured: true
   },
   {
@@ -352,7 +352,7 @@ At Tria, our instructors are trained to guide you through each movement with pre
     readTime: "7 min read",
     category: "Lagree",
     tags: ["lagree", "science", "strength training", "fitness"],
-    featuredImage: "/images/blog/lagree-science.jpg",
+    featuredImage: "/images/blog/e50eff_4965ce9844da4c3a877026c8edf3aee9~mv2.webp",
     featured: true
   },
   {
@@ -410,7 +410,7 @@ Your breath is always with you, ready to serve as a bridge between stress and se
     readTime: "4 min read",
     category: "Mindfulness",
     tags: ["breathwork", "meditation", "stress relief", "mindfulness"],
-    featuredImage: "/images/blog/breathwork.jpg"
+    featuredImage: "/images/blog/e50eff_6f9a8f3cfb954f388ca626de776193eb~mv2.avif"
   },
   {
     id: "4",
@@ -483,6 +483,6 @@ Remember: Wellness is not a destination but a lifelong journey of small, loving 
     readTime: "6 min read",
     category: "Wellness",
     tags: ["wellness routine", "habits", "lifestyle", "sustainability"],
-    featuredImage: "/images/blog/wellness-routine.jpg"
+    featuredImage: "/images/blog/e50eff_c78d109da0aa423bbfb77544310d05a9~mv2.webp"
   }
 ];

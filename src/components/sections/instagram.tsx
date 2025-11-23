@@ -1,70 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button";
-import DomeGallery from "@/components/DomeGallery";
-
-const instagramImages = [
-  {
-    src: "/images/studio-main.jpg",
-    alt: "Beautiful studio interior at Tria"
-  },
-  {
-    src: "/images/classes/lagree-method.webp",
-    alt: "Lagree method workout session"
-  },
-  {
-    src: "/images/classes/Vinyasa Flow.jpg",
-    alt: "Vinyasa flow yoga class"
-  },
-  {
-    src: "/images/studio-meditation.jpg",
-    alt: "Peaceful meditation space"
-  },
-  {
-    src: "/images/classes/restorative-yoga.webp",
-    alt: "Restorative yoga session"
-  },
-  {
-    src: "/images/studio-lounge.jpg",
-    alt: "Studio lounge area"
-  },
-  {
-    src: "/images/classes/power-flow.webp",
-    alt: "Power flow yoga class"
-  },
-  {
-    src: "/images/instructors/Sara.png",
-    alt: "Instructor Sara"
-  },
-  {
-    src: "/images/studio-entrance.jpg",
-    alt: "Studio entrance"
-  },
-  {
-    src: "/images/classes/mindful-meditation.webp",
-    alt: "Mindful meditation session"
-  },
-  {
-    src: "/images/studio-lagree.jpg",
-    alt: "Lagree equipment area"
-  },
-  {
-    src: "/images/instructors/Marcus.png",
-    alt: "Instructor Marcus"
-  },
-  {
-    src: "/images/classes/prenatal-yoga.jpg",
-    alt: "Prenatal yoga class"
-  },
-  {
-    src: "/images/instructors/Luna.png",
-    alt: "Instructor Luna"
-  },
-  {
-    src: "/images/studio-changing.jpg",
-    alt: "Studio changing area"
-  }
-];
 
 export function Instagram() {
   return (
@@ -96,18 +32,20 @@ export function Instagram() {
           </div>
         </div>
 
-        <div className="h-[600px] w-full">
-          <DomeGallery
-            images={instagramImages}
-            fit={0.7}
-            overlayBlurColor="#1D1D1D"
-            grayscale={false}
-            imageBorderRadius="20px"
-            openedImageBorderRadius="24px"
-            openedImageWidth="320px"
-            openedImageHeight="480px"
-            segments={30}
-          />
+        <div className="h-[600px] w-full flex items-center justify-center">
+          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full max-w-4xl">
+            {Array.from({ length: 32 }).map((_, index) => (
+              <div
+                key={index}
+                className={`aspect-square rounded-xl bg-gradient-to-br ${
+                  index % 4 === 0 ? 'from-primary to-accent' :
+                  index % 4 === 1 ? 'from-accent to-secondary' :
+                  index % 4 === 2 ? 'from-secondary to-primary/60' :
+                  'from-primary/60 to-accent'
+                } opacity-80 hover:opacity-100 transition-opacity duration-300`}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
