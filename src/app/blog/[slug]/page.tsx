@@ -22,7 +22,7 @@ function MarkdownContent({ content }: { content: string }) {
   // Simple markdown-to-JSX conversion for demonstration
   // In a production app, you'd use a proper markdown parser like react-markdown
   const lines = content.split('\n');
-  const elements: JSX.Element[] = [];
+  const elements: React.JSX.Element[] = [];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
