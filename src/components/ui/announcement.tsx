@@ -27,7 +27,7 @@ export function Announcement({
         className
       )}
     >
-      <Badge variant={variant} className="px-2 py-0.5">
+      <Badge variant={variant} className="px-2 py-0.5 bg-accent text-accent-foreground border-transparent">
         New
       </Badge>
       <span className="text-muted-foreground group-hover:text-foreground transition-colors">
