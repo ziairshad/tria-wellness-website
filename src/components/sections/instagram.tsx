@@ -32,12 +32,12 @@ export function Instagram() {
           </div>
         </div>
 
-        <div className="h-[600px] w-full flex items-center justify-center">
-          <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 w-full max-w-4xl">
-            {Array.from({ length: 32 }).map((_, index) => (
+        <div className="w-full overflow-hidden">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 sm:gap-4 w-full max-w-6xl mx-auto">
+            {Array.from({ length: 24 }).map((_, index) => (
               <div
                 key={index}
-                className={`aspect-square rounded-xl bg-gradient-to-br ${
+                className={`aspect-square rounded-lg sm:rounded-xl bg-gradient-to-br ${
                   index % 4 === 0 ? 'from-primary to-accent' :
                   index % 4 === 1 ? 'from-accent to-secondary' :
                   index % 4 === 2 ? 'from-secondary to-primary/60' :
