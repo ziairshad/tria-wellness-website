@@ -8,9 +8,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "All Levels",
     description: "Dynamic sequences linking breath with movement for strength, flexibility, and mindful awareness.",
     schedule: ["Mon • 9:00 AM", "Wed • 6:00 PM", "Fri • 9:00 AM", "Sun • 5:00 PM"],
-    gradientFrom: "from-primary/30",
-    gradientVia: "via-primary/20",
-    gradientTo: "to-primary/10",
+    gradientFrom: "from-primary/15",
+    gradientVia: "via-primary/10",
+    gradientTo: "to-primary/5",
     image: "/images/classes/Vinyasa Flow.jpg"
   },
   {
@@ -20,9 +20,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "Intermediate",
     description: "High-intensity, low-impact training that builds strength, endurance, and lean muscle mass.",
     schedule: ["Tue • 7:00 AM", "Thu • 6:30 PM", "Sat • 8:00 AM", "Sun • 10:00 AM"],
-    gradientFrom: "from-accent/30",
-    gradientVia: "via-accent/20",
-    gradientTo: "to-accent/10",
+    gradientFrom: "from-accent/15",
+    gradientVia: "via-accent/10",
+    gradientTo: "to-accent/5",
     image: "/images/classes/lagree-method.webp"
   },
   {
@@ -32,9 +32,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "All Levels",
     description: "Gentle, passive poses held for extended periods to promote deep relaxation and healing.",
     schedule: ["Wed • 7:30 PM", "Fri • 6:00 PM", "Sat • 4:00 PM", "Sun • 7:00 PM"],
-    gradientFrom: "from-secondary/30",
-    gradientVia: "via-secondary/20",
-    gradientTo: "to-secondary/10",
+    gradientFrom: "from-secondary/15",
+    gradientVia: "via-secondary/10",
+    gradientTo: "to-secondary/5",
     image: "/images/classes/restorative-yoga.webp"
   },
   {
@@ -44,9 +44,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "Advanced",
     description: "Vigorous, athletic yoga practice building heat, strength, and stamina through challenging poses.",
     schedule: ["Mon • 6:00 PM", "Wed • 12:00 PM", "Fri • 6:00 PM", "Sat • 9:00 AM"],
-    gradientFrom: "from-primary/40",
-    gradientVia: "via-accent/20",
-    gradientTo: "to-primary/10",
+    gradientFrom: "from-primary/20",
+    gradientVia: "via-accent/10",
+    gradientTo: "to-primary/5",
     image: "/images/classes/power-flow.webp"
   },
   {
@@ -56,9 +56,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "All Levels",
     description: "Guided meditation sessions focusing on breath awareness, presence, and inner peace.",
     schedule: ["Tue • 8:00 AM", "Thu • 7:00 PM", "Sat • 5:30 PM", "Sun • 9:00 AM"],
-    gradientFrom: "from-muted/40",
-    gradientVia: "via-muted/30",
-    gradientTo: "to-primary/10",
+    gradientFrom: "from-muted/20",
+    gradientVia: "via-muted/15",
+    gradientTo: "to-primary/5",
     image: "/images/classes/mindful-meditation.webp"
   },
   {
@@ -68,9 +68,9 @@ export const CLASSES_DATA: ClassData[] = [
     level: "Prenatal",
     description: "Safe, nurturing practice designed specifically for expecting mothers and growing families.",
     schedule: ["Mon • 10:30 AM", "Wed • 2:00 PM", "Fri • 10:30 AM", "Sat • 11:00 AM"],
-    gradientFrom: "from-secondary/40",
-    gradientVia: "via-accent/20",
-    gradientTo: "to-secondary/10",
+    gradientFrom: "from-secondary/20",
+    gradientVia: "via-accent/10",
+    gradientTo: "to-secondary/5",
     image: "/images/classes/prenatal-yoga.jpg"
   }
 ];
@@ -80,32 +80,32 @@ export const INSTRUCTORS_DATA: InstructorData[] = [
     name: "Sarah Chen",
     specialty: "Yoga & Mindfulness",
     initials: "SC",
-    gradient: "from-primary/30 to-primary/10",
-    bgColor: "bg-primary/20",
+    gradient: "from-primary/15 to-primary/5",
+    bgColor: "bg-primary/10",
     description: "With over 10 years of experience, Sarah brings a grounding presence to every class, helping students find their center through mindful movement."
   },
   {
     name: "Marcus Rivera",
     specialty: "Lagree Method",
     initials: "MR",
-    gradient: "from-accent/30 to-accent/10",
-    bgColor: "bg-accent/20",
+    gradient: "from-accent/15 to-accent/5",
+    bgColor: "bg-accent/10",
     description: "Marcus combines his background in athletic training with Lagree precision to create challenging yet accessible classes for all fitness levels."
   },
   {
     name: "Jordan Kim",
     specialty: "Lagree Method Expert",
     initials: "JK",
-    gradient: "from-accent/20 to-accent/10",
-    bgColor: "bg-accent/20",
+    gradient: "from-accent/10 to-accent/5",
+    bgColor: "bg-accent/10",
     description: "Jordan's precision and attention to form ensures every Lagree session maximizes strength building while maintaining safety and proper alignment."
   },
   {
     name: "Luna Martinez",
     specialty: "Wellness & Recovery",
     initials: "LM",
-    gradient: "from-secondary/30 to-secondary/10",
-    bgColor: "bg-primary/20",
+    gradient: "from-secondary/15 to-secondary/5",
+    bgColor: "bg-primary/10",
     description: "Luna specializes in restorative practices and helps clients overcome challenges and maintain balance through personalized wellness approaches."
   }
 ];
@@ -115,37 +115,37 @@ export const SERVICES_DATA: ServiceData[] = [
     title: "Group Classes",
     description: "Expertly guided yoga and Lagree sessions in a supportive community environment.",
     includes: ["Vinyasa Flow", "Lagree Method", "Restorative Yoga", "Meditation"],
-    gradientColors: "from-primary to-accent",
-    iconBg: "bg-primary/10",
-    iconColor: "bg-primary",
-    dotColor: "bg-accent"
+    gradientColors: "from-primary/60 to-accent/60",
+    iconBg: "bg-primary/5",
+    iconColor: "bg-primary/70",
+    dotColor: "bg-accent/70"
   },
   {
     title: "Private Sessions",
     description: "One-on-one personalized guidance tailored to your unique wellness goals.",
     includes: ["Personal Training", "Injury Recovery", "Mindfulness Coaching", "Wellness Consultation"],
-    gradientColors: "from-accent to-secondary",
-    iconBg: "bg-accent/10",
-    iconColor: "bg-accent",
-    dotColor: "bg-primary"
+    gradientColors: "from-accent/60 to-secondary/60",
+    iconBg: "bg-accent/5",
+    iconColor: "bg-accent/70",
+    dotColor: "bg-primary/70"
   },
   {
     title: "Wellness Programs",
     description: "Comprehensive programs for sustainable wellness and life transformation.",
     includes: ["Stress Management", "Nutrition Guidance", "Life Coaching", "Workshops"],
-    gradientColors: "from-secondary to-primary/60",
-    iconBg: "bg-secondary/10",
-    iconColor: "bg-secondary",
-    dotColor: "bg-secondary"
+    gradientColors: "from-secondary/60 to-primary/40",
+    iconBg: "bg-secondary/5",
+    iconColor: "bg-secondary/70",
+    dotColor: "bg-secondary/70"
   },
   {
     title: "Special Events",
     description: "Unique experiences and retreats for deeper connection and transformation.",
     includes: ["Weekend Retreats", "Teacher Training", "Community Events", "Seasonal Workshops"],
-    gradientColors: "from-primary/60 to-accent",
-    iconBg: "bg-primary/5",
-    iconColor: "bg-primary/60",
-    dotColor: "bg-primary/60"
+    gradientColors: "from-primary/40 to-accent/60",
+    iconBg: "bg-primary/3",
+    iconColor: "bg-primary/50",
+    dotColor: "bg-primary/50"
   }
 ];
 
@@ -171,15 +171,15 @@ export const STUDIO_FEATURES: StudioFeature[] = [
 export const STUDIO_SPACES: StudioSpace[] = [
   {
     name: "Main Studio Space",
-    gradient: "from-primary/20 to-primary/10"
+    gradient: "from-primary/10 to-primary/5"
   },
   {
     name: "Lagree\nStudio",
-    gradient: "from-accent/20 to-accent/10"
+    gradient: "from-accent/10 to-accent/5"
   },
   {
     name: "Meditation\nRoom",
-    gradient: "from-secondary/30 to-secondary/10"
+    gradient: "from-secondary/15 to-secondary/5"
   }
 ];
 
@@ -187,20 +187,20 @@ export const SERVICE_FEATURES: ServiceFeature[] = [
   {
     title: "Expert Guidance",
     description: "Certified instructors with years of experience in their specialized fields",
-    iconBg: "bg-primary/10",
-    iconColor: "bg-primary"
+    iconBg: "bg-primary/5",
+    iconColor: "bg-primary/70"
   },
   {
     title: "Personalized Approach",
     description: "Every service is tailored to meet your individual needs and wellness goals",
-    iconBg: "bg-accent/10",
-    iconColor: "bg-accent"
+    iconBg: "bg-accent/5",
+    iconColor: "bg-accent/70"
   },
   {
     title: "Holistic Focus",
     description: "Integrating mind, body, and spirit for complete wellness transformation",
-    iconBg: "bg-secondary/10",
-    iconColor: "bg-secondary"
+    iconBg: "bg-secondary/5",
+    iconColor: "bg-secondary/70"
   }
 ];
 
@@ -225,25 +225,25 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     name: "Wellness",
     slug: "wellness",
     description: "Holistic wellness tips and insights",
-    color: "bg-primary/10 text-primary"
+    color: "bg-primary/5 text-primary/80"
   },
   {
     name: "Yoga",
     slug: "yoga",
     description: "Yoga practices and philosophy",
-    color: "bg-accent/10 text-accent"
+    color: "bg-accent/5 text-accent/80"
   },
   {
     name: "Lagree",
     slug: "lagree",
     description: "Lagree method and training insights",
-    color: "bg-secondary/10 text-secondary"
+    color: "bg-secondary/5 text-secondary/80"
   },
   {
     name: "Mindfulness",
     slug: "mindfulness",
     description: "Meditation and mindfulness practices",
-    color: "bg-muted/30 text-foreground"
+    color: "bg-muted/15 text-foreground/80"
   }
 ];
 

@@ -168,10 +168,10 @@ export default function ContactPage() {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="bg-primary rounded-lg p-8 space-y-6">
+            <div className="bg-card/50 rounded-lg p-8 space-y-6">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-primary-foreground font-medium mb-2">
+                  <label htmlFor="name" className="block text-foreground font-medium mb-2">
                     Name
                   </label>
                   <input
@@ -181,13 +181,13 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground text-primary placeholder-primary/60 focus:ring-2 focus:ring-primary-foreground focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-primary-foreground font-medium mb-2">
+                  <label htmlFor="email" className="block text-foreground font-medium mb-2">
                     Email
                   </label>
                   <input
@@ -197,13 +197,13 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground text-primary placeholder-primary/60 focus:ring-2 focus:ring-primary-foreground focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Email"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-primary-foreground font-medium mb-2">
+                  <label htmlFor="message" className="block text-foreground font-medium mb-2">
                     Message
                   </label>
                   <textarea
@@ -213,7 +213,7 @@ export default function ContactPage() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground text-primary placeholder-primary/60 focus:ring-2 focus:ring-primary-foreground focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     placeholder="Type your message"
                   />
                 </div>
@@ -228,16 +228,16 @@ export default function ContactPage() {
                     required
                     className="mt-1"
                   />
-                  <label htmlFor="privacy" className="text-sm text-primary-foreground/80">
+                  <label htmlFor="privacy" className="text-sm text-muted-foreground">
                     By selecting this you agree to our{' '}
-                    <span className="underline cursor-pointer text-primary-foreground">Privacy Policy</span>.
+                    <span className="underline cursor-pointer text-primary">Privacy Policy</span>.
                   </label>
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting || !agreed}
-                  className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 disabled:opacity-50 py-4"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 py-4"
                 >
                   {isSubmitting ? (
                     <>

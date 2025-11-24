@@ -28,7 +28,7 @@ export function ClassCard({
   image,
 }: ClassCardProps) {
   return (
-    <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none p-0">
+    <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50">
       <div className={`relative h-56 overflow-hidden bg-gradient-to-br ${gradientFrom} ${gradientVia} ${gradientTo}`}>
       </div>
       <CardContent className="p-4 sm:p-5">

@@ -146,7 +146,7 @@ export function TestimonialsCarousel() {
   return (
     <div className="relative max-w-7xl mx-auto">
       {/* Main Carousel Container */}
-      <div className="relative overflow-hidden mx-auto" style={{ width: containerWidth }}>
+      <div className="relative mx-auto overflow-x-hidden py-4" style={{ width: containerWidth }}>
         <motion.div
           ref={constraintsRef}
           className="flex cursor-grab active:cursor-grabbing"
@@ -186,7 +186,7 @@ export function TestimonialsCarousel() {
                 ease: "easeOut"
               }}
             >
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-card/50">
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <div className="flex items-center space-x-1 mb-6">

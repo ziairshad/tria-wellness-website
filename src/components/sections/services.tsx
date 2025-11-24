@@ -43,7 +43,7 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 text-foreground">Our Services</h2>
@@ -60,7 +60,7 @@ export function Services() {
 
 
         <div className="text-center mt-16">
-          <Button asChild size="lg" className="px-8 bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button asChild variant="outline" size="lg" className="px-8">
             <a href="#classes">
               Explore Our Services
             </a>

@@ -58,7 +58,7 @@ const studioImages = [
 
 export function Studio() {
   return (
-    <section id="studio" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="studio" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-light tracking-tight mb-4">Our Studio</h2>
@@ -98,7 +98,7 @@ export function Studio() {
 
           <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[600px] auto-rows-fr">
             {studioImages.map((image, index) => (
-              <div key={index} className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 ${image.className}`}>
+              <div key={index} className={`relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 ${image.className}`}>
               </div>
             ))}
           </div>

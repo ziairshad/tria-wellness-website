@@ -19,7 +19,7 @@ function formatDate(dateString: string) {
 
 function FeaturedBlogCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-none p-0">
+    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative">
           <div className="aspect-[16/9] relative overflow-hidden rounded-t-lg">
@@ -60,7 +60,7 @@ function FeaturedBlogCard({ post }: { post: BlogPost }) {
 
 function RegularBlogCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-none p-0">
+    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative">
           <div className="aspect-[4/3] relative overflow-hidden rounded-t-lg">
