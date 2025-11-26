@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ClassCard } from "@/components/ui/class-card";
+import { Carousel } from "@/components/ui/carousel";
 import { CLASSES_DATA } from "@/data/constants";
+import { AnimatedSection } from "@/components/sections/animated-section";
 
 export function Classes() {
   return (
-    <section id="classes" className="py-20 px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="classes" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6">Our Classes</h2>
@@ -13,18 +15,22 @@ export function Classes() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel
+          showArrows={true}
+          showDots={true}
+          className="mb-16"
+        >
           {CLASSES_DATA.map((classItem, index) => (
             <ClassCard key={index} {...classItem} />
           ))}
-        </div>
+        </Carousel>
 
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Button variant="outline" size="lg" className="px-8">
             View Full Schedule
           </Button>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

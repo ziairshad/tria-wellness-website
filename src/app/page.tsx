@@ -5,9 +5,7 @@ import { Classes } from "@/components/sections/classes";
 import { Studio } from "@/components/sections/studio";
 import { Instructors } from "@/components/sections/instructors";
 import { Services } from "@/components/sections/services";
-import { Testimonials } from "@/components/sections/testimonials";
 import { Instagram } from "@/components/sections/instagram";
-import { CTA } from "@/components/sections/cta";
 import { Footer } from "@/components/sections/footer";
 
 export default function Home() {
@@ -20,9 +18,8 @@ export default function Home() {
       <Studio />
       <Instructors />
       <Services />
-      <Testimonials />
+      {/* Testimonials section temporarily hidden; re-add <Testimonials /> when ready */}
       <Instagram />
-      <CTA />
       <Footer />
     </div>
   );

@@ -217,7 +217,7 @@ export const NAVIGATION_LINKS = [
   { href: "#classes", label: "Classes" },
   { href: "#studio", label: "Studio" },
   { href: "#instructors", label: "Instructors" },
-  { href: "#services", label: "Services" }
+  { href: "#services", label: "Membership" }
 ];
 
 export const BLOG_CATEGORIES: BlogCategory[] = [

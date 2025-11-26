@@ -1,4 +1,5 @@
 import { Marquee } from "@/components/ui/marquee";
+import { AnimatedSection } from "@/components/sections/animated-section";
 
 const marqueeTexts = [
   "Sacred Balance",
@@ -11,7 +12,7 @@ const marqueeTexts = [
 
 export function MarqueeSection() {
   return (
-    <section className="py-12 border-y border-border">
+    <AnimatedSection className="py-12 border-y border-border">
       <Marquee className="[--duration:25s]">
         {marqueeTexts.map((text, index) => (
           <div key={index} className="flex items-center space-x-8 mx-8">
@@ -22,6 +23,6 @@ export function MarqueeSection() {
           </div>
         ))}
       </Marquee>
-    </section>
+    </AnimatedSection>
   );
 }

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { AnimatedSection } from "@/components/sections/animated-section";
 
 const studioFeatures = [
   {
@@ -58,7 +59,7 @@ const studioImages = [
 
 export function Studio() {
   return (
-    <section id="studio" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+    <AnimatedSection id="studio" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-light tracking-tight mb-4">Our Studio</h2>
@@ -104,6 +105,6 @@ export function Studio() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

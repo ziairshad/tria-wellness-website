@@ -1,38 +1,39 @@
-import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/ui/service-card";
+import { Carousel } from "@/components/ui/carousel";
+import { AnimatedSection } from "@/components/sections/animated-section";
 
-const servicesData = [
+const membershipData = [
   {
-    title: "Group Classes",
-    description: "Expertly guided yoga and Lagree sessions in a supportive community environment.",
-    includes: ["Vinyasa Flow", "Lagree Method", "Restorative Yoga", "Meditation"],
+    title: "Unlimited Monthly",
+    description: "Complete access to all classes and studio amenities for unlimited wellness.",
+    includes: ["Unlimited Classes", "All Class Types", "Studio Amenities", "Guest Passes"],
     gradientColors: "from-primary to-accent",
     iconBg: "bg-primary/10",
     iconColor: "bg-primary",
     dotColor: "bg-accent"
   },
   {
-    title: "Private Sessions",
-    description: "One-on-one personalized guidance tailored to your unique wellness goals.",
-    includes: ["Personal Training", "Injury Recovery", "Mindfulness Coaching", "Wellness Consultation"],
+    title: "Class Packages",
+    description: "Flexible class packages that fit your schedule and commitment level.",
+    includes: ["10-Class Package", "5-Class Package", "Single Drop-In", "Never Expire"],
     gradientColors: "from-accent to-secondary",
     iconBg: "bg-accent/10",
     iconColor: "bg-accent",
     dotColor: "bg-primary"
   },
   {
-    title: "Wellness Programs",
-    description: "Comprehensive programs for sustainable wellness and life transformation.",
-    includes: ["Stress Management", "Nutrition Guidance", "Life Coaching", "Workshops"],
+    title: "Private Training",
+    description: "Personalized one-on-one sessions tailored to your specific goals and needs.",
+    includes: ["Personal Assessment", "Custom Programs", "Injury Recovery", "Flexible Scheduling"],
     gradientColors: "from-secondary to-primary/60",
     iconBg: "bg-secondary/10",
     iconColor: "bg-secondary",
     dotColor: "bg-secondary"
   },
   {
-    title: "Special Events",
-    description: "Unique experiences and retreats for deeper connection and transformation.",
-    includes: ["Weekend Retreats", "Teacher Training", "Community Events", "Seasonal Workshops"],
+    title: "Student & Senior",
+    description: "Special pricing for students and seniors to make wellness accessible for all.",
+    includes: ["Discounted Classes", "Special Workshops", "Community Events", "Valid ID Required"],
     gradientColors: "from-primary/60 to-accent",
     iconBg: "bg-primary/5",
     iconColor: "bg-primary/60",
@@ -43,30 +44,37 @@ const servicesData = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+    <AnimatedSection id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 text-foreground">Our Services</h2>
+          <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 text-foreground">Membership & Packages</h2>
           <p className="text-lg font-sans text-muted-foreground max-w-2xl mx-auto">
-            Holistic wellness offerings designed to nurture your mind, body, and spirit
+            Flexible membership options and packages designed to fit your wellness journey
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {servicesData.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+        {/* Mobile: Carousel */}
+        <div className="block md:hidden">
+          <Carousel
+            showArrows={false}
+            showDots={true}
+            className="mb-16"
+          >
+            {membershipData.map((membership, index) => (
+              <ServiceCard key={index} {...membership} />
+            ))}
+          </Carousel>
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {membershipData.map((membership, index) => (
+            <ServiceCard key={index} {...membership} />
           ))}
         </div>
 
 
-        <div className="text-center mt-16">
-          <Button asChild variant="outline" size="lg" className="px-8">
-            <a href="#classes">
-              Explore Our Services
-            </a>
-          </Button>
-        </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

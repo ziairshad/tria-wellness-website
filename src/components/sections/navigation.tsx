@@ -10,10 +10,7 @@ const NAVIGATION_LINKS = [
   { href: "/", label: "Home", isHome: true },
   { href: "/about", label: "About" },
   { href: "#classes", label: "Classes", homeOnly: true },
-  { href: "#studio", label: "Studio", homeOnly: true },
-  { href: "#instructors", label: "Instructors", homeOnly: true },
-  { href: "#services", label: "Services", homeOnly: true },
-  { href: "/blog", label: "Blog" },
+  { href: "#services", label: "Membership & Packages", homeOnly: true },
   { href: "/contact", label: "Contact" },
 ];
 

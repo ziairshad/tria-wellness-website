@@ -99,8 +99,8 @@
   --radius: 0.625rem;
 
   /* Tria Brand Colors - Exact conversions provided by client */
-  /* WHITE as background */
-  --background: oklch(100% 0.000 0);
+  /* #F6EFEC as background */
+  --background: oklch(96.48% 0.018 50.23);
   --foreground: oklch(23.08% 0.000 0);
 
   /* CHARCOAL BLACK - #1D1D1D */
@@ -111,7 +111,7 @@
   --card-foreground: oklch(23.08% 0.000 0);
 
   /* Light card background for popovers */
-  --popover: oklch(100% 0.000 0);
+  --popover: oklch(96.48% 0.018 50.23);
   --popover-foreground: oklch(23.08% 0.000 0);
 
   /* DEEP EUCALYPTUS - #5A6E53 as primary */
@@ -143,7 +143,7 @@
   --chart-4: oklch(87.63% 0.021 67.55);
   --chart-5: oklch(91.62% 0.010 87.47);
 
-  --sidebar: oklch(100% 0.000 0);
+  --sidebar: oklch(96.48% 0.018 50.23);
   --sidebar-foreground: oklch(23.08% 0.000 0);
   --sidebar-primary: oklch(51.40% 0.048 137.66);
   --sidebar-primary-foreground: oklch(91.62% 0.010 87.47);

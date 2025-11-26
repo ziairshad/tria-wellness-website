@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import { Carousel } from "@/components/ui/carousel";
+import { AnimatedSection } from "@/components/sections/animated-section";
 
 const instructorsData = [
   {
@@ -42,7 +43,7 @@ const instructorsData = [
 
 export function Instructors() {
   return (
-    <section id="instructors" className="py-20 px-4 sm:px-6 lg:px-8">
+    <AnimatedSection id="instructors" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-light tracking-tight mb-4">Meet Our Instructors</h2>
@@ -51,7 +52,31 @@ export function Instructors() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Mobile: Carousel */}
+        <div className="block md:hidden">
+          <Carousel
+            showArrows={false}
+            showDots={true}
+            className="mb-16"
+          >
+            {instructorsData.map((instructor, index) => (
+              <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50">
+                <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${instructor.gradient}`}>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-serif font-medium mb-2">{instructor.name}</h3>
+                  <p className="text-accent font-sans font-medium mb-3">{instructor.specialty}</p>
+                  <p className="font-sans text-muted-foreground text-sm leading-relaxed">
+                    {instructor.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </Carousel>
+        </div>
+
+        {/* Desktop: Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {instructorsData.map((instructor, index) => (
             <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50">
               <div className={`relative h-64 overflow-hidden bg-gradient-to-br ${instructor.gradient}`}>
@@ -67,6 +92,6 @@ export function Instructors() {
           ))}
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
