@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Smooth scrolling for the posture page */
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

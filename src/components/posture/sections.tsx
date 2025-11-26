@@ -1,93 +1,327 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { AnimatedSection } from "@/components/sections/animated-section";
-import { CLASSES_DATA } from "@/data/constants";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const heroStats = [
-  { label: "Studios Worldwide", value: "03" },
-  { label: "Weekly Classes", value: "65+" },
-  { label: "Community Members", value: "1.8K" },
-];
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.8, ease: "easeOut" as const },
+  viewport: { once: true, amount: 0.3 }
+};
 
-const programHighlights = CLASSES_DATA.slice(0, 3);
+const stagger = {
+  initial: {},
+  whileInView: {},
+  transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+};
 
-const schedulePreview = [
-  {
-    day: "Morning",
-    sessions: [
-      { time: "6:45 AM", name: "Lagree Method", coach: "Marcus Rivera" },
-      { time: "8:00 AM", name: "Mindful Flow", coach: "Sarah Chen" },
-      { time: "9:30 AM", name: "Prenatal Support", coach: "Maya Singh" },
-    ],
-  },
-  {
-    day: "Midday",
-    sessions: [
-      { time: "12:00 PM", name: "Power Flow", coach: "James Wilson" },
-      { time: "1:30 PM", name: "Meditation Reset", coach: "Aria Patel" },
-    ],
-  },
-  {
-    day: "Evening",
-    sessions: [
-      { time: "5:00 PM", name: "Restorative Yoga", coach: "Luna Martinez" },
-      { time: "6:30 PM", name: "Lagree Method", coach: "Jordan Kim" },
-      { time: "8:00 PM", name: "Sound Bath", coach: "Guest Guides" },
-    ],
-  },
-];
-
+// Hero Carousel Component - Exact replica of Posture website
 export function PostureHero() {
+  const slides = [
+    {
+      desktop: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2070",
+      mobile: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000",
+      title: "Transform Your Body",
+      subtitle: "Experience the Tria Method",
+      cta: "Join the Challenge"
+    },
+    {
+      desktop: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070",
+      mobile: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000",
+      title: "Precision Movement",
+      subtitle: "Every session, every breath matters",
+      cta: "Book Your Class"
+    },
+    {
+      desktop: "https://images.unsplash.com/photo-1506629905877-33d3de6e4bef?q=80&w=2070",
+      mobile: "https://images.unsplash.com/photo-1506629905877-33d3de6e4bef?q=80&w=1000",
+      title: "Mind-Body Connection",
+      subtitle: "Discover your potential",
+      cta: "Start Today"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="space-y-10">
-          <p className="uppercase tracking-[0.4em] text-xs font-semibold text-muted-foreground">
-            Tria Studio
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light leading-tight text-foreground">
-            Precision movement for sacred balance.
-          </h1>
-          <p className="text-lg text-muted-foreground font-sans max-w-2xl leading-relaxed">
-            Inspired by the fluid layout of Posture, this alternate landing experience distills our mindful
-            classes, Lagree training, and restorative rituals into a clean, editorial journey.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg">
-              <a href="#programs">Explore Programs</a>
+    <section className="relative h-screen overflow-hidden">
+      {/* Image Carousel */}
+      <div className="relative w-full h-full">
+        {slides.map((slide, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: index === currentSlide ? 1 : 0,
+              scale: index === currentSlide ? 1 : 1.05
+            }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          >
+            <picture>
+              <source media="(max-width: 768px)" srcSet={slide.mobile} />
+              <img
+                src={slide.desktop}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+            </picture>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50" />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-white scale-110'
+                : 'bg-white/50 hover:bg-white/70'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Content Overlay */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="text-center px-6 max-w-4xl mx-auto">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="space-y-6"
+          >
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-vonca font-extralight text-white leading-none">
+              {slides[currentSlide].title.split(' ').map((word, i) => (
+                <span key={i} className={i === 1 ? 'font-bold block' : 'block'}>
+                  {word}
+                </span>
+              ))}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto">
+              {slides[currentSlide].subtitle}
+            </p>
+            <Button
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 text-lg font-medium rounded-full"
+            >
+              {slides[currentSlide].cta}
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Schedule a Studio Visit</Link>
-            </Button>
-          </div>
-          <div className="grid grid-cols-3 gap-6 border-t border-border/60 pt-8">
-            {heroStats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-3xl font-serif">{stat.value}</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          </motion.div>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-6 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl opacity-60" />
-          <div className="relative rounded-[32px] overflow-hidden border border-border/60 bg-background/60 shadow-2xl">
-            <Image
-              src="/images/studio-main.jpg"
-              alt="Tria Studio interior"
-              width={900}
-              height={1200}
-              className="w-full h-[520px] object-cover"
-            />
-            <div className="grid grid-cols-2 border-t border-border/60">
-              <CardStat title="Lagree" description="Megaformer studio for sculpt + strength" />
-              <CardStat title="Rituals" description="Meditation, sound baths, and breathwork" />
+      </div>
+    </section>
+  );
+}
+
+// Membership Cards - Exact replica layout
+export function PostureMembership() {
+  const memberships = [
+    {
+      icon: "💫",
+      title: "Foundation",
+      subtitle: "Single Class",
+      description: "Perfect for trying our method for the first time",
+      price: "$35"
+    },
+    {
+      icon: "🎯",
+      title: "Explorer",
+      subtitle: "Class Package",
+      description: "Dive deeper with multiple sessions",
+      price: "$150"
+    },
+    {
+      icon: "🔥",
+      title: "Transformer",
+      subtitle: "Monthly Unlimited",
+      description: "Full access to transform your practice",
+      price: "$195"
+    },
+    {
+      icon: "✨",
+      title: "Lifestyle",
+      subtitle: "Annual Membership",
+      description: "Complete wellness journey with all benefits",
+      price: "$1,800"
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <motion.div {...fadeInUp} className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-vonca font-light text-primary mb-6">
+            Membership & Credits
+          </h2>
+        </motion.div>
+
+        <motion.div
+          {...stagger}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {memberships.map((membership, index) => (
+            <motion.div key={index} {...fadeInUp}>
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 h-full group">
+                <CardContent className="p-8 text-center h-full flex flex-col">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {membership.icon}
+                  </div>
+                  <h3 className="text-2xl font-vonca font-medium text-primary mb-2">
+                    {membership.title}
+                  </h3>
+                  <p className="text-secondary font-medium mb-4">
+                    {membership.subtitle}
+                  </p>
+                  <p className="text-gray-600 mb-6 flex-1">
+                    {membership.description}
+                  </p>
+                  <div className="text-3xl font-vonca font-bold text-primary mb-6">
+                    {membership.price}
+                  </div>
+                  <Button className="w-full bg-primary hover:bg-primary/90 rounded-full">
+                    Choose Plan
+                  </Button>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// Our Method Section - Exact replica
+export function PostureMethod() {
+  return (
+    <section className="py-24 bg-accent/5">
+      <div className="container mx-auto px-6">
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-vonca font-light text-primary mb-8">
+            Our Method
+          </h2>
+          <div className="space-y-8 text-lg leading-relaxed text-gray-700">
+            <p>
+              At Tria, we believe that true transformation comes from precision, awareness, and
+              dedication to the process. Our method combines classical movement principles with
+              modern understanding of the body.
+            </p>
+            <p>
+              Each session is carefully crafted to challenge your body and mind, creating lasting
+              change that extends far beyond our studio walls. We focus on quality over quantity,
+              ensuring every movement serves a purpose.
+            </p>
+            <p>
+              Our expert instructors guide you through a journey of discovery, helping you unlock
+              your body's potential through mindful, controlled movement that builds strength,
+              flexibility, and confidence.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// Classes Section - Exact replica
+export function PostureClasses() {
+  return (
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div {...fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-vonca font-light text-primary mb-8">
+              Classes
+            </h2>
+            <div className="space-y-6 text-lg text-gray-700">
+              <p>
+                Our classes are designed for individuals seeking personalized attention
+                and transformative results. With small class sizes, you'll receive the
+                guidance needed to reach your goals.
+              </p>
+              <p>
+                Whether you're new to movement or looking to deepen your practice,
+                our expert instructors will meet you where you are and help you
+                discover what your body is truly capable of.
+              </p>
+              <p>
+                Every class is a step toward a stronger, more balanced version of yourself.
+              </p>
             </div>
+            <div className="mt-8">
+              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-full">
+                View Schedule
+              </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            {...fadeInUp}
+            className="relative"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070"
+              alt="Tria class in session"
+              className="w-full rounded-2xl shadow-2xl"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Contact CTA - Minimal footer style
+export function PostureCTA() {
+  return (
+    <section className="py-16 bg-primary text-white">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div>
+            <h3 className="text-2xl font-vonca font-light mb-2">Ready to begin?</h3>
+            <p className="text-white/80">Join us for a transformative experience</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 rounded-full">
+              Book Your First Class
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-full">
+              Chat with Us
+            </Button>
           </div>
         </div>
       </div>
@@ -95,208 +329,8 @@ export function PostureHero() {
   );
 }
 
-function CardStat({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="p-6">
-      <p className="font-serif text-lg">{title}</p>
-      <p className="text-sm text-muted-foreground">{description}</p>
-    </div>
-  );
-}
-
-export function PostureStrip() {
-  const stripItems = ["Lagree", "Mindful Flow", "Restorative Rituals", "Private Coaching", "Community"];
-  return (
-    <AnimatedSection className="border-y border-border bg-background">
-      <div className="max-w-7xl mx-auto py-6 flex flex-wrap items-center justify-between gap-4 text-xs tracking-[0.4em] uppercase text-muted-foreground">
-        {stripItems.map((item) => (
-          <span key={item} className="font-semibold">
-            {item}
-          </span>
-        ))}
-      </div>
-    </AnimatedSection>
-  );
-}
-
-export function PosturePrograms() {
-  return (
-    <AnimatedSection id="programs" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/40">
-      <div className="max-w-7xl mx-auto space-y-12">
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10">
-          <div className="space-y-5">
-            <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Programs</p>
-            <h2 className="text-4xl font-serif font-light leading-tight">Modular practices for every nervous system.</h2>
-            <p className="text-muted-foreground font-sans">
-              Borrowing from the Posture cadence, we shaped three hero formats that anchor our schedule: mindful flow,
-              Lagree strength, and restorative rituals.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {programHighlights.map((program) => (
-              <div key={program.title} className="rounded-3xl border border-border/60 bg-background/80 p-6">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4">{program.level}</p>
-                <h3 className="font-serif text-2xl mb-2">{program.title}</h3>
-                <p className="text-sm text-muted-foreground mb-6">{program.description}</p>
-                <div className="space-y-1">
-                  {program.schedule.slice(0, 2).map((slot) => (
-                    <p key={slot} className="text-sm font-sans text-foreground">
-                      {slot}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
-export function PostureExperience() {
-  const pillars = [
-    { title: "Spatial storytelling", copy: "Layered lighting, botanicals, curated scent, and artisanal soundscapes." },
-    { title: "Intelligent programming", copy: "Daily sequencing that balances intensity, restoration, and integration." },
-    { title: "Membership rituals", copy: "Monthly check-ins, recovery labs, and curated gatherings for members." },
-  ];
-
-  return (
-    <AnimatedSection className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-        <div className="space-y-6">
-          <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Experience</p>
-          <h2 className="text-4xl font-serif font-light leading-tight">
-            The Tria posture: minimalist architecture, maximal presence.
-          </h2>
-          <p className="text-muted-foreground">
-            We mapped the Posture layout&rsquo;s editorial energy into our own voice: elongated typography, generous white space, and
-            tactile gradients that mirror our sanctuary in Dubai.
-          </p>
-          <div className="space-y-5">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="border-t border-border pt-5">
-                <p className="font-serif text-xl mb-1">{pillar.title}</p>
-                <p className="text-sm text-muted-foreground">{pillar.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="grid gap-6">
-          <div className="rounded-[32px] overflow-hidden border border-border/60">
-            <Image
-              src="/images/studio-meditation.jpg"
-              alt="Meditation space"
-              width={900}
-              height={700}
-              className="w-full h-[320px] object-cover"
-            />
-          </div>
-          <div className="rounded-[32px] overflow-hidden border border-border/60">
-            <Image
-              src="/images/studio-lagree.jpg"
-              alt="Lagree studio"
-              width={900}
-              height={700}
-              className="w-full h-[320px] object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
-export function PostureMembership() {
-  const benefits = [
-    "Unlimited Lagree + yoga access",
-    "Priority booking for workshops",
-    "Monthly nervous system check-ins",
-    "Guest passes + curated retail",
-  ];
-  return (
-    <AnimatedSection className="py-20 px-4 sm:px-6 lg:px-8 bg-card/60">
-      <div className="max-w-6xl mx-auto rounded-[40px] border border-border/60 bg-background/80 px-10 py-14">
-        <div className="grid lg:grid-cols-[1fr_0.9fr] gap-12 items-center">
-          <div className="space-y-5">
-            <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Membership</p>
-            <h2 className="text-4xl font-serif font-light leading-tight">Membership & Packages</h2>
-            <p className="text-muted-foreground">
-              Choose from unlimited memberships, thoughtful class packs, or bespoke private training. Every tier unlocks seasonal
-              immersions and concierge-level scheduling inspired by Posture&rsquo;s member journey.
-            </p>
-            <Button asChild size="lg">
-              <a href="#schedule">View Schedule</a>
-            </Button>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {benefits.map((benefit) => (
-              <div key={benefit} className="rounded-2xl border border-border/60 p-5 bg-muted/20">
-                <p className="text-sm font-semibold">{benefit}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
-export function PostureSchedule() {
-  return (
-    <AnimatedSection id="schedule" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-10">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Schedule</p>
-            <h2 className="text-4xl font-serif font-light leading-tight">A rhythm of classes that breathe.</h2>
-          </div>
-          <Button asChild variant="secondary">
-            <a href="#classes">Download Full Schedule</a>
-          </Button>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {schedulePreview.map((block) => (
-            <div key={block.day} className="rounded-3xl border border-border/60 bg-background/80 p-6 space-y-4">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{block.day}</p>
-              <div className="space-y-4">
-                {block.sessions.map((session) => (
-                  <div key={`${block.day}-${session.time}`} className="border-t border-border/40 pt-4">
-                    <p className="text-sm text-muted-foreground">{session.time}</p>
-                    <p className="font-serif text-xl">{session.name}</p>
-                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{session.coach}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
-export function PostureCTA() {
-  return (
-    <AnimatedSection className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto text-center space-y-6">
-        <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground">Visit</p>
-        <h2 className="text-4xl font-serif font-light">
-          Ready to feel the Tria posture? Book your first Lagree or mindfulness ritual.
-        </h2>
-        <p className="text-muted-foreground max-w-3xl mx-auto">
-          Inspired by the minimalist cues of Posture&apos;s landing page, this alt flow is ideal for campaigns, special events,
-          or A/B tests without touching the primary homepage.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg">
-            <Link href="/contact">Plan Your Visit</Link>
-          </Button>
-          <Button asChild variant="outline" size="lg">
-            <a href="#programs">See Programs</a>
-          </Button>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
+// Keep these for backward compatibility but they won't be used in the new layout
+export function PostureStrip() { return null; }
+export function PosturePrograms() { return null; }
+export function PostureExperience() { return null; }
+export function PostureSchedule() { return null; }

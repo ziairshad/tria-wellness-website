@@ -2,25 +2,21 @@ import { Navigation } from "@/components/sections/navigation";
 import { Footer } from "@/components/sections/footer";
 import {
   PostureCTA,
-  PostureExperience,
   PostureHero,
   PostureMembership,
-  PosturePrograms,
-  PostureSchedule,
-  PostureStrip,
+  PostureMethod,
+  PostureClasses,
 } from "@/components/posture/sections";
 
 export default function PostureLanding() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
-      <main className="pt-20">
+      <main>
         <PostureHero />
-        <PostureStrip />
-        <PosturePrograms />
-        <PostureExperience />
         <PostureMembership />
-        <PostureSchedule />
+        <PostureMethod />
+        <PostureClasses />
         <PostureCTA />
       </main>
       <Footer />
