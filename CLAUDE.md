@@ -9,6 +9,7 @@ npm run dev    # Start development server (http://localhost:3000)
 npm run build  # Build for production
 npm run start  # Start production server
 npm run lint   # Run ESLint
+npx tsc --noEmit  # Type check (no dedicated script configured)
 ```
 
 ## Project Architecture
@@ -16,9 +17,9 @@ npm run lint   # Run ESLint
 This is a Next.js 16 landing page for Tria, a wellness studio offering yoga and Lagree Method classes. The application uses:
 
 - **Framework**: Next.js 16 with App Router and TypeScript
-- **Styling**: Tailwind CSS v4 with custom brand colors
+- **Styling**: Tailwind CSS v4 (no config file needed) with custom brand colors
 - **UI Components**: shadcn/ui components with custom styling
-- **Animations**: Framer Motion for smooth transitions
+- **Animations**: Framer Motion for smooth transitions + custom CSS keyframes
 - **Fonts**: Custom Vonca font family + Google Fonts (Montserrat)
 
 ### Key Directories
@@ -80,7 +81,7 @@ primary: #5A6E53     /* Deep Eucalyptus */
 secondary: #A85C42   /* Clay Brown */
 accent: #C0CBBD      /* Eucalyptus Green */
 background: #E6E3DC  /* Drift White */
-muted: #E0D4C8       /* Zen Sand */
+muted: #E0D4C8       /* Zen Sand *t/
 ```
 
 ## Font Implementation
@@ -93,6 +94,8 @@ muted: #E0D4C8       /* Zen Sand */
 
 - The project follows Next.js 16 App Router conventions
 - All animations use Framer Motion for consistency
+- Custom CSS animations defined in `globals.css` (marquee, fade-in)
 - Brand guidelines are documented in `/Brandguidelines` (parent directory)
 - Static assets include class images and studio photos
 - No testing framework is currently configured
+- Tailwind CSS v4 uses native CSS imports, no separate config file required

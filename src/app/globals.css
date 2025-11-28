@@ -216,14 +216,50 @@ html {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Account for fixed navigation height */
+    overflow-x: hidden;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: #F5F3EA !important;
+    background-color: #F5F3EA !important;
+    background-image: none !important;
+    overflow-x: hidden;
   }
 }
 
 /* Custom styles for DomeGallery scroll lock */
 .dg-scroll-lock {
   overflow: hidden;
+}
+
+/* Landing V2 background color - pure solid base */
+.landing-v2-bg {
+  background: #F5F3EA !important;
+  background-color: #F5F3EA !important;
+  background-image: none !important;
+  background-attachment: scroll !important;
+  background-position: initial !important;
+  background-repeat: no-repeat !important;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
 }

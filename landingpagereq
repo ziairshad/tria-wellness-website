@@ -1,0 +1,39 @@
+top most bar:
+1. full width, with logo in the middle
+2. navigation menu on the left, not a hamburger icon but "Menu" as a text, once menu is clicked it slides in from the left of the page with a full page dialog with 2 columns, left column will have all the navigation link followed by social media icon and right column will have one big image. Navigation link: About, Membership & Packages, Gift Cards, Contact Us, Classes, Workshops, Retreats, Upcoming Instructor Trainings, Blog
+3. CTA with text "Book Now & Move With Us"
+
+
+hero section:
+1. use embla carousel to create a new slider with 4 slides, no typing animation just content with navigation. Following are the slide content:
+Slide 1: Heading: New Customer Offer, Sub-heading: use placeholder text - CTA: Book Session
+Slide 2: Heading: Download Tria App, Sub-heading: use placeholder text - CTA: Android Store & Play Store buttons with icons
+Slide 3: Heading: Find Our Store, Sub-heading: use placeholder text - CTA: Directions
+Slide 4: First Konnector Reformer Studio in UAE, Sub-heading: use placeholder text - CTA: Blog
+
+4 square card grid section:
+Card 1: Image Background, Overlaying content "Book Your Class" CTA "Click Here". Content will be center aligned
+Card 2: Image Background, Overlaying content "Meet the Team" CTA "Yoga", "Pilate" and "Lagree"
+Card 3: Image Background, Overlaying content "Memberships, Packages & Giftcards" CTA "Click Here"
+Card 4: Image Background, Overlaying content "Retreats, Upcoming Workshops, Teacher Training & Events" CTA "Click Here"
+
+5. intagram feed full width section:
+Section Title: Join The Community
+Use Embla Carousel to show big images from instagram
+CTA Instagram link with icon
+
+6. Full width - 2 column section
+Left column: Heading "Behind Tria" followed by a 2 paragraph content
+Right column: Square image
+
+7. Full width - 2 column section
+Left column: Image
+Right column: accordions with 8 classes, collapsed by default
+
+8. Full width rectangular section with image background
+Heading: Cateteria
+Text: "Your New Working Space" center aligned to the section
+CTA "Click Here"
+
+Coding Style: KISS - Keep it simple stupid, Use component based structure
+Use Tria Branding

@@ -1,0 +1,90 @@
+import { NavigationV2 } from '@/components/sections/navigation-v2'
+import { FooterV2 } from '@/components/sections/footer-v2'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { BLOG_POSTS } from '@/data/constants'
+import { BlogPost } from '@/types'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Clock, ArrowRight } from 'lucide-react'
+
+function RegularBlogCard({ post }: { post: BlogPost }) {
+  return (
+    <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-none p-0 bg-card/50 rounded-[30px]">
+      <Link href={`/landing-v2/blog/${post.slug}`}>
+        <div className="relative">
+          <div className="aspect-[4/3] relative overflow-hidden rounded-t-[30px]">
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#A85C42] to-transparent" />
+
+            <div className="absolute bottom-4 left-4 right-4">
+              <h3 className="font-vonca text-xl font-bold text-white leading-tight line-clamp-2">
+                {post.title}
+              </h3>
+            </div>
+          </div>
+
+          <div className="p-6">
+            <p className="text-card-foreground mb-4 line-clamp-3 leading-relaxed">
+              {post.excerpt}
+            </p>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1 text-xs text-card-foreground/70">
+                <Clock className="w-3 h-3" />
+                <span>{post.readTime}</span>
+              </div>
+
+              <ArrowRight className="w-4 h-4 text-card-foreground/60 group-hover:text-card-foreground group-hover:translate-x-1 transition-all" />
+            </div>
+
+            {post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-1 mt-4">
+                {post.tags.slice(0, 2).map((tag, index) => (
+                  <Badge
+                    key={index}
+                    variant="outline"
+                    className="text-xs px-2 py-1 border-card-foreground/20 text-card-foreground/70"
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </Link>
+    </Card>
+  )
+}
+
+export default function BlogLandingV2() {
+  return (
+    <div className="min-h-screen landing-v2-bg">
+      <NavigationV2 />
+
+      <section className="pt-32 px-4 pb-20 bg-gradient-to-br from-muted/20 via-transparent to-primary/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6">
+              Tria Blog
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {BLOG_POSTS.map((post) => (
+              <RegularBlogCard key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FooterV2 />
+    </div>
+  )
+}

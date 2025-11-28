@@ -14,7 +14,7 @@ export function Instagram() {
               Join the Community
             </h2>
             <p className="text-lg font-sans text-white/80 max-w-lg mb-8 leading-relaxed">
-              Experience the sacred balance through our community's transformative moments
+              Experience the sacred balance through our community&apos;s transformative moments
             </p>
             <div className="relative inline-block p-[2px] rounded-lg bg-gradient-to-r from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] hover:shadow-lg transition-all duration-300">
               <Button

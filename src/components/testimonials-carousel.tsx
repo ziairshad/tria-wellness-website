@@ -123,7 +123,10 @@ export function TestimonialsCarousel() {
     setIsDragging(true)
   }
 
-  const handleDragEnd = (event: any, info: PanInfo) => {
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
     setIsDragging(false)
     const threshold = 100
     const swipeDirection = info.offset.x > threshold ? -1 : info.offset.x < -threshold ? 1 : 0
@@ -186,7 +189,10 @@ export function TestimonialsCarousel() {
                 ease: "easeOut"
               }}
             >
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-card/50">
+              <Card
+                className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full"
+                style={{ backgroundColor: '#DFDDD4' }}
+              >
                 <CardContent className="p-8">
                   <div className="mb-6">
                     <div className="flex items-center space-x-1 mb-6">
@@ -206,7 +212,7 @@ export function TestimonialsCarousel() {
                       ))}
                     </div>
                     <p className="font-sans text-muted-foreground leading-relaxed text-base mb-8 min-h-[140px] italic">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </p>
                   </div>
                   <div>
@@ -224,11 +230,11 @@ export function TestimonialsCarousel() {
       <motion.button
         onClick={prevSlide}
         disabled={currentIndex === 0}
-        className="absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
+        className="absolute -left-16 top-1/2 -translate-y-1/2 p-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </motion.button>
@@ -236,11 +242,11 @@ export function TestimonialsCarousel() {
       <motion.button
         onClick={nextSlide}
         disabled={currentIndex === maxIndex}
-        className="absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
+        className="absolute -right-16 top-1/2 -translate-y-1/2 p-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </motion.button>

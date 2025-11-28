@@ -83,7 +83,7 @@ export default function ContactPage() {
               Message Sent!
             </h2>
             <p className="text-xl font-sans text-muted-foreground leading-relaxed">
-              Thank you for reaching out. We'll get back to you within 24 hours.
+              Thank you for reaching out. We&apos;ll get back to you within 24 hours.
             </p>
           </Card>
         </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   Get in touch
                 </h1>
                 <p className="text-xl font-sans text-muted-foreground leading-relaxed">
-                  Write one or two welcoming sentences that encourage contact. Include your response time commitment and highlight your team's readiness to help.
+                  Write one or two welcoming sentences that encourage contact. Include your response time commitment and highlight your team&apos;s readiness to help.
                 </p>
               </div>
 
