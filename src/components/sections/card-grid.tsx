@@ -12,13 +12,14 @@ const cards = [
     }
   },
   {
-    title: 'Meet the Team',
+    title: 'Meet TRIA Team',
     image: '/images/meettheteam.jpg',
     cta: {
       buttons: [
         { text: 'Yoga', href: '#' },
         { text: 'Pilates', href: '#' },
-        { text: 'Lagree', href: '#' }
+        { text: 'Lagree', href: '#' },
+        { text: 'HIIT & Strength', href: '#' }
       ]
     }
   },
@@ -26,7 +27,11 @@ const cards = [
     title: 'Memberships, Packages & Giftcards',
     image: '/images/membership.jpg',
     cta: {
-      primary: { text: 'Click Here', href: '#' }
+      buttons: [
+        { text: 'Memberships', href: '#' },
+        { text: 'Packages', href: '#' },
+        { text: 'Giftcards', href: '#' }
+      ]
     }
   },
   {

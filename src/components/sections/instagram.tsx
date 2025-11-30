@@ -10,9 +10,6 @@ export function Instagram() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
           <div className="text-left">
-            <h2 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 text-white">
-              Join the Community
-            </h2>
             <p className="text-lg font-sans text-white/80 max-w-lg mb-8 leading-relaxed">
               Experience the sacred balance through our community&apos;s transformative moments
             </p>

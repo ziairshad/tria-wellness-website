@@ -2,6 +2,7 @@ import { NavigationV2 } from '@/components/sections/navigation-v2'
 import { FooterV2 } from '@/components/sections/footer-v2'
 import { CheckCircle } from 'lucide-react'
 import { Testimonials } from '@/components/sections/testimonials'
+import { AnimatedNumber } from '@/components/ui/animated-number'
 
 const ABOUT_CONTENT = {
   hero: {
@@ -76,7 +77,7 @@ export default function AboutLandingV2() {
                 {ABOUT_CONTENT.stats.map((stat) => (
                   <div key={stat.label} className="space-y-2">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-bold text-foreground">{stat.number}</span>
+                      <AnimatedNumber value={stat.number} className="text-3xl font-bold text-foreground" />
                       <span className="text-lg text-foreground font-medium">{stat.label}</span>
                     </div>
                     <p className="text-sm text-muted-foreground">{stat.description}</p>

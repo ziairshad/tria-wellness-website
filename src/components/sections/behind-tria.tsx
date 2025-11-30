@@ -1,6 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function BehindTria() {
   return (
@@ -32,8 +35,16 @@ export function BehindTria() {
             viewport={{ once: true }}
             className="space-y-8 order-2 lg:order-1"
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground">
-              Behind Tria
+            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground flex flex-wrap items-center gap-2 md:gap-3">
+              <span className="whitespace-nowrap">Philosophy Behind</span>
+              <Image
+                src="/logo/logo.svg"
+                alt="Tria Logo"
+                width={60}
+                height={60}
+                className="h-10 md:h-12 w-auto inline-block"
+                style={{ filter: 'brightness(0) saturate(100%) invert(11%) sepia(8%) saturate(1015%) hue-rotate(314deg) brightness(95%) contrast(96%)' }}
+              />
             </h2>
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-sans">
@@ -44,6 +55,14 @@ export function BehindTria() {
               <p>
                 At Tria, we&apos;ve carefully curated a space that honors both tradition and innovation. From our state-of-the-art Konnector Reformer technology to our serene yoga studios, every element has been thoughtfully designed to support your personal transformation. Our diverse team of certified instructors brings together decades of experience in yoga, Pilates, and the revolutionary Lagree Method, ensuring that every class is both challenging and accessible.
               </p>
+            </div>
+
+            <div className="mt-8">
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full">
+                <Link href="/landing-v2/about">
+                  Know More
+                </Link>
+              </Button>
             </div>
           </motion.div>
         </div>

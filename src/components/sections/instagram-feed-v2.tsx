@@ -68,9 +68,19 @@ export function InstagramFeedV2() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-semibold text-white mb-8">
-              Join The Community
-            </h2>
+            <div className="relative inline-block rounded-full">
+              <Button
+                asChild
+                variant="ghost"
+                size="lg"
+                className="px-6 py-6 bg-accent text-white hover:bg-accent/90 rounded-full border-2 border-white text-xl font-semibold"
+              >
+                <a href="https://instagram.com/triadxb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                  <img src="/icons/instagram.svg" alt="Instagram" width="28" height="28" className="w-7 h-7" />
+                  triadxb
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           <div className="relative">
@@ -104,31 +114,6 @@ export function InstagramFeedV2() {
 
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-            <div className="relative inline-block rounded-full">
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="px-6 bg-accent text-white hover:bg-accent rounded-full border border-white"
-              >
-                <a href="https://instagram.com/triadxb" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2"/>
-                    <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" strokeWidth="2"/>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2"/>
-                  </svg>
-                  triadxb
-                </a>
-              </Button>
-            </div>
-          </motion.div>
       </div>
     </section>
   )
