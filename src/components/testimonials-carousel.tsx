@@ -191,7 +191,7 @@ export function TestimonialsCarousel() {
             >
               <Card
                 className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 h-full"
-                style={{ backgroundColor: '#DFDDD4' }}
+                style={{ backgroundColor: '#5A6E53' }}
               >
                 <CardContent className="p-8">
                   <div className="mb-6">
@@ -199,7 +199,7 @@ export function TestimonialsCarousel() {
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <motion.div
                           key={i}
-                          className="w-5 h-5 rounded-full bg-accent"
+                          className="w-5 h-5 rounded-full bg-white"
                           initial={{ scale: 0, rotate: 180 }}
                           animate={{ scale: 1, rotate: 0 }}
                           transition={{
@@ -211,13 +211,13 @@ export function TestimonialsCarousel() {
                         />
                       ))}
                     </div>
-                    <p className="font-sans text-muted-foreground leading-relaxed text-base mb-8 min-h-[140px] italic">
+                    <p className="font-sans text-white/80 leading-relaxed text-base mb-8 min-h-[140px] italic">
                       &ldquo;{testimonial.text}&rdquo;
                     </p>
                   </div>
                   <div>
-                    <p className="font-serif font-semibold text-lg text-foreground">{testimonial.name}</p>
-                    <p className="font-sans text-sm text-muted-foreground mt-1">{testimonial.memberSince}</p>
+                    <p className="font-serif font-semibold text-lg text-white">{testimonial.name}</p>
+                    <p className="font-sans text-sm text-white/60 mt-1">{testimonial.memberSince}</p>
                   </div>
                 </CardContent>
               </Card>

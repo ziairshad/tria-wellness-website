@@ -20,6 +20,7 @@ const slides = [
   {
     heading: 'Download TRIA App',
     subHeading: 'Take your wellness journey anywhere. Access classes, book sessions, and connect with our community right from your phone.',
+    backgroundImage: '/images/slides/App.png',
     cta: {
       text: 'Get the App',
       icon: <Smartphone className="w-5 h-5" />,
@@ -38,6 +39,7 @@ const slides = [
   {
     heading: 'A Balance Body Studio Where You Will Meet Real Pilates',
     subHeading: 'A fully equipped balance body studio where you will rediscover pilates methods',
+    backgroundImage: '/images/slides/hero-desktop.webp',
     icon: '/icons/balancedbody.svg',
     cta: null
   },
@@ -195,10 +197,16 @@ export function HeroV2() {
                       <Image src={slide.icon} alt="Balance Body" width={120} height={60} className="mx-auto h-16 w-auto" />
                     </div>
                   )}
-                  <h1 className={`font-serif text-5xl md:text-7xl font-semibold mb-6 leading-tight ${slide.backgroundImage || slide.backgroundVideo ? 'text-white' : 'text-foreground'}`}>
+                  <h1 className={`font-serif text-5xl md:text-7xl font-semibold mb-6 leading-tight ${
+                    index === 1 ? 'text-background' :
+                    (slide.backgroundImage || slide.backgroundVideo ? 'text-white' : 'text-foreground')
+                  }`}>
                     {slide.heading}
                   </h1>
-                  <p className={`text-lg md:text-xl mb-8 leading-relaxed font-sans ${slide.backgroundImage || slide.backgroundVideo ? 'text-white/90' : 'text-muted-foreground'}`}>
+                  <p className={`text-lg md:text-xl mb-8 leading-relaxed font-sans ${
+                    index === 1 ? 'text-background' :
+                    (slide.backgroundImage || slide.backgroundVideo ? 'text-white/90' : 'text-muted-foreground')
+                  }`}>
                     {slide.subHeading}
                   </p>
 
@@ -252,7 +260,7 @@ export function HeroV2() {
               href="https://wa.me/971501234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/90 hover:bg-white text-gray-800 hover:text-gray-900 px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm border border-gray-200/50"
+              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
             >
               <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6" />
               <span className="font-medium text-sm">Chat with us</span>
@@ -261,7 +269,7 @@ export function HeroV2() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/90 hover:bg-white text-gray-800 hover:text-gray-900 px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm border border-gray-200/50"
+              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
             >
               <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
               <span className="font-medium text-sm">Follow us on IG</span>

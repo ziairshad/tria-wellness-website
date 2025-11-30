@@ -183,11 +183,11 @@ export default function ContactLandingV2() {
 
             <div
               className="rounded-[30px] p-8 space-y-6"
-              style={{ backgroundColor: '#DFDDD4' }}
+              style={{ backgroundColor: '#5A6E53' }}
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-foreground font-medium mb-2">
+                  <label htmlFor="name" className="block text-white font-medium mb-2">
                     Name
                   </label>
                   <input
@@ -197,13 +197,13 @@ export default function ContactLandingV2() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-white focus:border-transparent"
                     placeholder="Name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-foreground font-medium mb-2">
+                  <label htmlFor="email" className="block text-white font-medium mb-2">
                     Email
                   </label>
                   <input
@@ -213,13 +213,13 @@ export default function ContactLandingV2() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-white focus:border-transparent"
                     placeholder="Email"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-foreground font-medium mb-2">
+                  <label htmlFor="message" className="block text-white font-medium mb-2">
                     Message
                   </label>
                   <textarea
@@ -229,7 +229,7 @@ export default function ContactLandingV2() {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-white focus:border-transparent resize-none"
                     placeholder="Type your message"
                   />
                 </div>
@@ -243,9 +243,9 @@ export default function ContactLandingV2() {
                     required
                     className="mt-1"
                   />
-                  <label htmlFor="privacy" className="text-sm text-muted-foreground">
+                  <label htmlFor="privacy" className="text-sm text-white/80">
                     By selecting this you agree to our{' '}
-                    <span className="underline cursor-pointer text-primary">Privacy Policy</span>.
+                    <span className="underline cursor-pointer text-white">Privacy Policy</span>.
                   </label>
                 </div>
 

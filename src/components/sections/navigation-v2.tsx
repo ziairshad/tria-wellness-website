@@ -61,17 +61,25 @@ export function NavigationV2() {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-50 p-4"
           >
-            <div className="h-full overflow-hidden" style={{ backgroundColor: '#5A6E53', borderRadius: '30px' }}>
+            <div className="h-full overflow-hidden relative" style={{ borderRadius: '30px' }}>
+              <div className="absolute inset-0">
+                <img
+                  src="/images/footerbg.png"
+                  alt="Menu background"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative z-10 h-full">
               <div className="flex h-full">
               <div className="flex-1 p-8 overflow-y-auto">
-                <div className="flex justify-between items-center mb-12">
+                <div className="flex justify-between items-center">
                   <Link href="/landing-v2">
                     <Image
                       src="/logo/logo.svg"
                       alt="Tria Logo"
-                      width={120}
-                      height={120}
-                      className="w-30 h-30"
+                      width={240}
+                      height={240}
+                      className="w-60 h-60"
                       style={{ filter: 'brightness(0) invert(1)' }}
                     />
                   </Link>
@@ -83,7 +91,7 @@ export function NavigationV2() {
                   </button>
                 </div>
 
-                <nav className="space-y-6 mb-12">
+                <nav className="space-y-6 -mt-4 mb-8">
                   {navigationLinks.map((link, index) => (
                     <motion.a
                       key={link.label}
@@ -129,6 +137,7 @@ export function NavigationV2() {
                   />
                   <div className="absolute inset-0 bg-primary/20" style={{ borderRadius: '30px' }} />
                 </motion.div>
+              </div>
               </div>
               </div>
             </div>

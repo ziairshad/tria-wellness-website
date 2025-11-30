@@ -7,7 +7,7 @@ import { AnimatedNumber } from '@/components/ui/animated-number'
 const ABOUT_CONTENT = {
   hero: {
     label: '',
-    title: 'Know the story of Tria',
+    title: 'Know the story of TRIA',
     description:
       'Tria represents a journey toward sacred balance — the harmony of mind, body, and soul. Founded on the principles of intentional movement and mindful transformation, we create a sanctuary where strength meets serenity.'
   },
@@ -35,7 +35,7 @@ const ABOUT_CONTENT = {
   ],
   sections: [
     {
-      title: 'Why Choose Tria?',
+      title: 'Why Choose TRIA?',
       description:
         'We bridge the gap between strength and stillness, offering both dynamic Lagree sessions and grounding yoga practices in one harmonious space.'
     },

@@ -5,6 +5,7 @@ import { InstagramFeedV2 } from "@/components/sections/instagram-feed-v2";
 import { BehindTria } from "@/components/sections/behind-tria";
 import { ClassesAccordion } from "@/components/sections/classes-accordion";
 import { CafeteriaBanner } from "@/components/sections/cafeteria-banner";
+import { MapSection } from "@/components/sections/map-section";
 import { FooterV2 } from "@/components/sections/footer-v2";
 
 export default function LandingV2() {
@@ -17,6 +18,7 @@ export default function LandingV2() {
       <BehindTria />
       <ClassesAccordion />
       <CafeteriaBanner />
+      <MapSection />
       <FooterV2 />
     </div>
   );
