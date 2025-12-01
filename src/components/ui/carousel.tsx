@@ -11,6 +11,7 @@ interface CarouselProps {
   options?: EmblaOptionsType;
   showArrows?: boolean;
   showDots?: boolean;
+  arrowVisibility?: "lg-only" | "all";
 }
 
 export function Carousel({
@@ -23,6 +24,7 @@ export function Carousel({
   },
   showArrows = true,
   showDots = true,
+  arrowVisibility = "lg-only",
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
@@ -80,7 +82,7 @@ export function Carousel({
           <motion.button
             onClick={scrollPrev}
             disabled={!prevBtnEnabled}
-            className="absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
+            className={`absolute top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent text-accent-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 items-center justify-center ${arrowVisibility === "lg-only" ? "hidden lg:flex -left-16" : "flex -left-3 sm:-left-6 lg:-left-16"}`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -92,7 +94,7 @@ export function Carousel({
           <motion.button
             onClick={scrollNext}
             disabled={!nextBtnEnabled}
-            className="absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary text-primary-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 hidden lg:flex items-center justify-center"
+            className={`absolute top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent text-accent-foreground disabled:opacity-30 disabled:cursor-not-allowed shadow-lg z-10 items-center justify-center ${arrowVisibility === "lg-only" ? "hidden lg:flex -right-16" : "flex -right-3 sm:-right-6 lg:-right-16"}`}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >

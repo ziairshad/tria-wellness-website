@@ -33,7 +33,7 @@ export function CafeteriaBanner() {
           size="lg"
           className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-3 font-sans rounded-full"
         >
-          Click Here
+          View Menu
         </Button>
             </motion.div>
         </div>

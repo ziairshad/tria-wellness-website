@@ -3,13 +3,14 @@ import { FooterV2 } from '@/components/sections/footer-v2'
 import { CheckCircle } from 'lucide-react'
 import { Testimonials } from '@/components/sections/testimonials'
 import { AnimatedNumber } from '@/components/ui/animated-number'
+import Image from 'next/image'
 
 const ABOUT_CONTENT = {
   hero: {
     label: '',
     title: 'Know the story of TRIA',
     description:
-      'Tria represents a journey toward sacred balance — the harmony of mind, body, and soul. Founded on the principles of intentional movement and mindful transformation, we create a sanctuary where strength meets serenity.'
+      'TRIA represents a journey toward sacred balance — the harmony of mind, body, and soul. Founded on the principles of intentional movement and mindful transformation, we create a sanctuary where strength meets serenity.'
   },
   stats: [
     {
@@ -65,8 +66,16 @@ export default function AboutLandingV2() {
                 {ABOUT_CONTENT.hero.label ? (
                   <p className="text-muted-foreground text-lg mb-4">{ABOUT_CONTENT.hero.label}</p>
                 ) : null}
-                <h1 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6">
-                  {ABOUT_CONTENT.hero.title}
+                <h1 className="text-4xl lg:text-5xl font-serif font-light tracking-tight mb-6 flex flex-wrap items-center gap-2 md:gap-3">
+                  <span className="whitespace-nowrap">Know the story of</span>
+                  <Image
+                    src="/logo/logo.svg"
+                    alt="Tria Logo"
+                    width={60}
+                    height={60}
+                    className="h-8 md:h-10 w-auto inline-block"
+                    style={{ filter: 'brightness(0) saturate(100%) invert(11%) sepia(8%) saturate(1015%) hue-rotate(314deg) brightness(95%) contrast(96%)' }}
+                  />
                 </h1>
                 <p className="text-xl font-sans text-muted-foreground leading-relaxed mb-8">
                   {ABOUT_CONTENT.hero.description}

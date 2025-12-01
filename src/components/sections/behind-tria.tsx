@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export function BehindTria() {
   return (
-    <section className="py-4 overflow-hidden">
+    <section id="philosophy" className="py-4 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full px-4">
           <motion.div
           initial={{ opacity: 0, x: 50 }}

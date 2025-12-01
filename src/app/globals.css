@@ -44,7 +44,6 @@ html {
   }
 }
 
-@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -158,55 +157,6 @@ html {
   --sidebar-ring: oklch(51.40% 0.048 137.66);
 }
 
-.dark {
-  /* Dark theme using exact darker Tria brand colors */
-  /* DEEP EUCALYPTUS #5A6E53 as dark background */
-  --background: oklch(51.40% 0.048 137.66);
-  --foreground: oklch(91.62% 0.010 87.47);
-
-  /* CHARCOAL BLACK #1D1D1D for cards */
-  --card: oklch(23.08% 0.000 0);
-  --card-foreground: oklch(91.62% 0.010 87.47);
-
-  --popover: oklch(23.08% 0.000 0);
-  --popover-foreground: oklch(91.62% 0.010 87.47);
-
-  /* EUCALYPTUS GREEN #C0CBBD as primary in dark */
-  --primary: oklch(82.97% 0.023 138.98);
-  --primary-foreground: oklch(23.08% 0.000 0);
-
-  /* ZEN SAND #E0D4C8 as secondary in dark */
-  --secondary: oklch(87.63% 0.021 67.55);
-  --secondary-foreground: oklch(23.08% 0.000 0);
-
-  --muted: oklch(51.40% 0.048 137.66);
-  --muted-foreground: oklch(82.97% 0.023 138.98);
-
-  /* CLAY BROWN #A85C42 as accent in dark */
-  --accent: oklch(55.78% 0.107 39.49);
-  --accent-foreground: oklch(91.62% 0.010 87.47);
-
-  --destructive: oklch(0.704 0.191 22.216);
-
-  --border: oklch(51.40% 0.048 137.66);
-  --input: oklch(51.40% 0.048 137.66);
-  --ring: oklch(82.97% 0.023 138.98);
-
-  --chart-1: oklch(82.97% 0.023 138.98);
-  --chart-2: oklch(55.78% 0.107 39.49);
-  --chart-3: oklch(51.40% 0.048 137.66);
-  --chart-4: oklch(87.63% 0.021 67.55);
-  --chart-5: oklch(23.08% 0.000 0);
-
-  --sidebar: oklch(23.08% 0.000 0);
-  --sidebar-foreground: oklch(91.62% 0.010 87.47);
-  --sidebar-primary: oklch(82.97% 0.023 138.98);
-  --sidebar-primary-foreground: oklch(23.08% 0.000 0);
-  --sidebar-accent: oklch(51.40% 0.048 137.66);
-  --sidebar-accent-foreground: oklch(91.62% 0.010 87.47);
-  --sidebar-border: oklch(51.40% 0.048 137.66);
-  --sidebar-ring: oklch(82.97% 0.023 138.98);
-}
 
 @layer base {
   * {
@@ -217,6 +167,7 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* Account for fixed navigation height */
     overflow-x: hidden;
+    color-scheme: light only !important;
   }
 
   body {
@@ -225,6 +176,29 @@ html {
     background-color: #F5F3EA !important;
     background-image: none !important;
     overflow-x: hidden;
+    color-scheme: light only !important;
+  }
+
+  /* Force light mode and prevent browser dark mode interference */
+  :root {
+    color-scheme: light only !important;
+  }
+
+  * {
+    color-scheme: light only !important;
+  }
+
+  /* Prevent Samsung browser dark mode auto-adjustments */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: light only !important;
+    }
+
+    body {
+      background: #F5F3EA !important;
+      background-color: #F5F3EA !important;
+      color-scheme: light only !important;
+    }
   }
 }
 

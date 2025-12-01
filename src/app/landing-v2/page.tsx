@@ -1,4 +1,5 @@
 import { NavigationV2 } from "@/components/sections/navigation-v2";
+import { NavigationMobile } from "@/components/sections/navigation-mobile";
 import { HeroV2 } from "@/components/sections/hero-v2";
 import { CardGrid } from "@/components/sections/card-grid";
 import { InstagramFeedV2 } from "@/components/sections/instagram-feed-v2";
@@ -12,6 +13,7 @@ export default function LandingV2() {
   return (
     <div className="min-h-screen landing-v2-bg overflow-x-hidden">
       <NavigationV2 />
+      <NavigationMobile />
       <HeroV2 />
       <CardGrid />
       <InstagramFeedV2 />

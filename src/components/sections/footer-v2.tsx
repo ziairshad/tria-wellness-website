@@ -18,9 +18,9 @@ export function FooterV2() {
           />
         </div>
         <div className="relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="flex items-center">
-            <div className="w-full h-32 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-[50%_50%] gap-8 items-center">
+          <div className="flex items-center justify-center lg:py-0 py-4">
+            <div className="w-full h-48 lg:h-80 relative max-w-lg lg:max-w-xl">
               <Image
                 src="/logo/logo.svg"
                 alt="Tria logo"
@@ -33,26 +33,21 @@ export function FooterV2() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div className="space-y-4">
             <h4 className="font-serif text-lg font-medium mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2 font-sans">
               <li><a href="/landing-v2/about" className="text-white/80 hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Classes</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Memberships</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Instructors</a></li>
-              <li><a href="/landing-v2/contact" className="text-white/80 hover:text-white transition-colors">Contact</a></li>
-              <li><a href="/landing-v2/blog" className="text-white/80 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Team</a></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-medium mb-4 text-white">Services</h4>
+            <h4 className="font-serif text-lg font-medium mb-4 text-white">Information</h4>
             <ul className="space-y-2 font-sans">
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Yoga Classes</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Lagree Method</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Personal Training</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Workshops</a></li>
-              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Retreats</a></li>
+              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Terms</a></li>
+              <li><a href="#" className="text-white/80 hover:text-white transition-colors">Privacy</a></li>
             </ul>
           </div>
 
@@ -73,6 +68,7 @@ export function FooterV2() {
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">

@@ -87,7 +87,7 @@ export function ClassesAccordion() {
   }, [])
 
   return (
-    <section className="py-4 overflow-hidden">
+    <section className="py-12 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start w-full px-4">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -119,19 +119,16 @@ export function ClassesAccordion() {
             className="space-y-4 order-2 lg:order-2"
           >
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-foreground mb-6">
-              Classes
+              Explore Our Classes
             </h2>
 
-            <p className="text-lg text-muted-foreground leading-relaxed font-sans mb-8">
-              We offer personalized classes for all levels, focusing on strength, flexibility and posture. With expert guidance and small class sizes, we ensure individual attention in a supportive environment. Whether you're recovering from an injury or enhancing fitness, our sessions help you achieve your goals.
-            </p>
 
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="single" collapsible className="space-y-2">
               {classes.map((classItem, index) => (
-                <AccordionItem key={classItem.title} value={`item-${index}`} className="rounded-[30px]">
-                  <AccordionTrigger className="rounded-[30px] font-semibold">{classItem.title}</AccordionTrigger>
-                  <AccordionContent className="rounded-b-[30px]">
-                    <p className="text-muted-foreground mb-4 leading-relaxed font-sans">
+                <AccordionItem key={classItem.title} value={`item-${index}`} className="rounded-[25px]">
+                  <AccordionTrigger className="rounded-[25px] font-semibold py-4 px-5">{classItem.title}</AccordionTrigger>
+                  <AccordionContent className="rounded-b-[25px]">
+                    <p className="text-muted-foreground mb-1 leading-relaxed font-sans px-5 pb-2">
                       {classItem.description}
                     </p>
                   </AccordionContent>

@@ -24,7 +24,7 @@ export function NavigationV2() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 p-4">
+      <header className="fixed top-0 left-0 right-0 z-40 p-4 hidden md:block">
           <div style={{ backgroundColor: '#5A6E53', borderRadius: '30px' }}>
             <div className="flex items-center justify-between py-4 md:px-6">
           <Button
