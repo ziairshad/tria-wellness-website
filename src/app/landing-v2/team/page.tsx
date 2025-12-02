@@ -1,4 +1,5 @@
 import { NavigationV2 } from '@/components/sections/navigation-v2'
+import { NavigationMobile } from '@/components/sections/navigation-mobile'
 import { FooterV2 } from '@/components/sections/footer-v2'
 import { Card } from '@/components/ui/card'
 import { INSTRUCTORS_DATA } from '@/data/constants'
@@ -153,6 +154,7 @@ export default function MeetTheTeam() {
   return (
     <div className="min-h-screen landing-v2-bg">
       <NavigationV2 />
+      <NavigationMobile />
 
       <section className="pt-32 px-4 pb-20 bg-gradient-to-br from-muted/20 via-transparent to-primary/5">
         <div className="max-w-7xl mx-auto">
