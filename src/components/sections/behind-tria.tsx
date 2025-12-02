@@ -1,11 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export function BehindTria() {
+  const [isExpanded, setIsExpanded] = useState(false)
+
   return (
     <section id="philosophy" className="py-4 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full px-4">
@@ -47,14 +51,66 @@ export function BehindTria() {
               />
             </h2>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-sans">
-              <p>
-                Founded with a vision to transform the wellness landscape in the UAE, Tria represents more than just a studio—it&apos;s a sanctuary where movement meets mindfulness. Our journey began with a simple belief: that every body deserves to experience the profound benefits of intentional movement, regardless of experience level or physical limitations.
-              </p>
+            <div className="relative">
+              {/* Mobile expandable text */}
+              <div className="md:hidden">
+                <div className="relative">
+                  <div
+                    className={`space-y-6 text-base text-muted-foreground leading-relaxed font-sans transition-all duration-300 ${
+                      isExpanded ? 'max-h-none' : 'max-h-32 overflow-hidden'
+                    }`}
+                  >
+                    <p>
+                      Founded with a vision to transform the wellness landscape in the UAE, Tria represents more than just a studio—it&apos;s a sanctuary where movement meets mindfulness. Our journey began with a simple belief: that every body deserves to experience the profound benefits of intentional movement, regardless of experience level or physical limitations.
+                    </p>
 
-              <p>
-                At Tria, we&apos;ve carefully curated a space that honors both tradition and innovation. From our state-of-the-art Konnector Reformer technology to our serene yoga studios, every element has been thoughtfully designed to support your personal transformation. Our diverse team of certified instructors brings together decades of experience in yoga, Pilates, and the revolutionary Lagree Method, ensuring that every class is both challenging and accessible.
-              </p>
+                    <p>
+                      At Tria, we&apos;ve carefully curated a space that honors both tradition and innovation. From our state-of-the-art Konnector Reformer technology to our serene yoga studios, every element has been thoughtfully designed to support your personal transformation. Our diverse team of certified instructors brings together decades of experience in yoga, Pilates, and the revolutionary Lagree Method, ensuring that every class is both challenging and accessible.
+                    </p>
+                  </div>
+
+                  {!isExpanded && (
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F5F3EA] to-transparent" />
+                  )}
+                </div>
+
+                <div className="flex justify-center">
+                  <motion.button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-4 p-2 text-foreground hover:text-foreground/80 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <motion.div
+                      animate={{
+                        rotate: isExpanded ? 180 : 0,
+                        y: isExpanded ? 0 : [0, -2, 0]
+                      }}
+                      transition={{
+                        rotate: { duration: 0.3 },
+                        y: {
+                          duration: 1.5,
+                          repeat: isExpanded ? 0 : Infinity,
+                          ease: "easeInOut"
+                        }
+                      }}
+                    >
+                      <ChevronDown className="w-8 h-8 stroke-[1.5]" />
+                    </motion.div>
+                  </motion.button>
+                </div>
+              </div>
+
+              {/* Desktop full text */}
+              <div className="hidden md:block space-y-6 text-lg text-muted-foreground leading-relaxed font-sans">
+                <p>
+                  Founded with a vision to transform the wellness landscape in the UAE, Tria represents more than just a studio—it&apos;s a sanctuary where movement meets mindfulness. Our journey began with a simple belief: that every body deserves to experience the profound benefits of intentional movement, regardless of experience level or physical limitations.
+                </p>
+
+                <p>
+                  At Tria, we&apos;ve carefully curated a space that honors both tradition and innovation. From our state-of-the-art Konnector Reformer technology to our serene yoga studios, every element has been thoughtfully designed to support your personal transformation. Our diverse team of certified instructors brings together decades of experience in yoga, Pilates, and the revolutionary Lagree Method, ensuring that every class is both challenging and accessible.
+                </p>
+              </div>
             </div>
 
             <div className="mt-8">
