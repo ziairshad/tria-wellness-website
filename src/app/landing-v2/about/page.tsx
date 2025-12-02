@@ -1,4 +1,5 @@
 import { NavigationV2 } from '@/components/sections/navigation-v2'
+import { NavigationMobile } from '@/components/sections/navigation-mobile'
 import { FooterV2 } from '@/components/sections/footer-v2'
 import { CheckCircle } from 'lucide-react'
 import { Testimonials } from '@/components/sections/testimonials'
@@ -57,6 +58,7 @@ export default function AboutLandingV2() {
   return (
     <div className="min-h-screen landing-v2-bg">
       <NavigationV2 />
+      <NavigationMobile />
 
       <section className="pt-32 px-4 pb-20">
         <div className="max-w-6xl mx-auto">
@@ -82,14 +84,14 @@ export default function AboutLandingV2() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 lg:gap-6">
                 {ABOUT_CONTENT.stats.map((stat) => (
                   <div key={stat.label} className="space-y-2">
-                    <div className="flex items-baseline gap-2">
-                      <AnimatedNumber value={stat.number} className="text-3xl font-bold text-foreground" />
-                      <span className="text-lg text-foreground font-medium">{stat.label}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+                      <AnimatedNumber value={stat.number} className="text-2xl sm:text-3xl font-bold text-foreground leading-tight" />
+                      <span className="text-base sm:text-lg text-foreground font-medium">{stat.label}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">{stat.description}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{stat.description}</p>
                   </div>
                 ))}
               </div>
