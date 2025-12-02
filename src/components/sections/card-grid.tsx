@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const cards = [
   {
@@ -17,10 +18,10 @@ const cards = [
     image: '/images/meettheteam.jpg',
     cta: {
       buttons: [
-        { text: 'Yoga', href: '#' },
-        { text: 'Pilates', href: '#' },
-        { text: 'Lagree', href: '#' },
-        { text: 'HIIT & Strength', href: '#' }
+        { text: 'Yoga', href: '/landing-v2/team' },
+        { text: 'Pilates', href: '/landing-v2/team' },
+        { text: 'Lagree', href: '/landing-v2/team' },
+        { text: 'HIIT & Strength', href: '/landing-v2/team' }
       ]
     }
   },
@@ -36,12 +37,12 @@ const cards = [
     }
   },
   {
-    title: '',
+    title: 'Upcoming',
     image: '/images/classes/restorative-yoga.webp',
     cta: {
       buttons: [
         { text: 'Retreats', href: '#' },
-        { text: 'Upcoming Workshops', href: '#' },
+        { text: 'Workshops', href: '#' },
         { text: 'Teacher Training', href: '#' },
         { text: 'Events', href: '#' }
       ]
@@ -105,13 +106,14 @@ export function CardGrid() {
                 ) : (
                   <div className="flex flex-col gap-2 items-center justify-center w-full sm:flex-row sm:gap-3">
                     {card.cta.buttons?.map((button, buttonIndex) => (
-                      <Button
-                        key={buttonIndex}
-                        size="sm"
-                        className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full lg:size-lg w-auto px-4 py-2"
-                      >
-                        {button.text}
-                      </Button>
+                      <Link key={buttonIndex} href={button.href}>
+                        <Button
+                          size="sm"
+                          className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full lg:size-lg w-auto px-4 py-2"
+                        >
+                          {button.text}
+                        </Button>
+                      </Link>
                     ))}
                   </div>
                 )}

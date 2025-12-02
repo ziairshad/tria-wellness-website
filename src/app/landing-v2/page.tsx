@@ -8,6 +8,7 @@ import { ClassesAccordion } from "@/components/sections/classes-accordion";
 import { CafeteriaBanner } from "@/components/sections/cafeteria-banner";
 import { MapSection } from "@/components/sections/map-section";
 import { FooterV2 } from "@/components/sections/footer-v2";
+import { NewsletterPopup } from "@/components/ui/newsletter-popup";
 
 export default function LandingV2() {
   return (
@@ -22,6 +23,7 @@ export default function LandingV2() {
       <CafeteriaBanner />
       <MapSection />
       <FooterV2 />
+      <NewsletterPopup />
     </div>
   );
 }
