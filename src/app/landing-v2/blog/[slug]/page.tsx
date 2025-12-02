@@ -1,4 +1,5 @@
 import { NavigationV2 } from '@/components/sections/navigation-v2'
+import { NavigationMobile } from '@/components/sections/navigation-mobile'
 import { FooterV2 } from '@/components/sections/footer-v2'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -96,6 +97,7 @@ export default async function BlogPostLandingV2({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen landing-v2-bg">
       <NavigationV2 />
+      <NavigationMobile />
 
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
