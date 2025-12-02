@@ -37,7 +37,7 @@ const slides = [
     }
   },
   {
-    heading: 'A fully equipped balance body studio where you will rediscover pilates methods',
+    heading: 'A fully equipped balance body studio where you will rediscover pilates method',
     subHeading: '',
     backgroundImage: '/images/slides/hero-desktop.webp',
     icon: '/icons/balancedbody.svg',
@@ -254,16 +254,16 @@ export function HeroV2() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="absolute bottom-8 left-8 z-10"
+            className="absolute bottom-8 left-4 lg:left-8 z-10"
           >
             <a
               href="https://wa.me/971501234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
+              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-3 lg:px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
             >
-              <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="w-6 h-6" />
-              <span className="font-medium text-sm">Hear from us</span>
+              <Image src="/icons/whatsapp.svg" alt="WhatsApp" width={24} height={24} className="w-5 h-5 lg:w-6 lg:h-6" />
+              <span className="font-medium text-xs lg:text-sm">Hear from us</span>
             </a>
           </motion.div>
 
@@ -271,16 +271,16 @@ export function HeroV2() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="absolute bottom-8 right-8 z-10"
+            className="absolute bottom-8 right-4 lg:right-8 z-10"
           >
             <a
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
+              className="flex items-center gap-2 bg-background/20 hover:bg-background/30 border border-background/80 text-background hover:text-background px-3 lg:px-4 py-2 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 backdrop-blur-sm"
             >
-              <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
-              <span className="font-medium text-sm">Follow us</span>
+              <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} className="w-5 h-5 lg:w-6 lg:h-6" />
+              <span className="font-medium text-xs lg:text-sm">Follow us</span>
             </a>
           </motion.div>
       </div>

@@ -73,22 +73,24 @@ export function CardGrid() {
 
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 lg:p-8 z-10">
                 {card.icon && (
                   <div className="mb-4">
                     <img src={card.icon} alt="Tria Icon" className="mx-auto object-contain w-1/2" />
                   </div>
                 )}
-                <h3 className={`font-serif text-2xl md:text-3xl font-semibold mb-8 ${
-                  index === 0 ? 'text-background' : 'text-white'
-                }`}>
-                  {card.title}
-                </h3>
+                {card.title && (
+                  <h3 className={`font-serif text-2xl md:text-3xl font-semibold mb-6 lg:mb-8 ${
+                    index === 0 ? 'text-background' : 'text-white'
+                  }`}>
+                    {card.title}
+                  </h3>
+                )}
 
                 {card.cta.primary ? (
                   <Button
-                    size="lg"
-                    className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full"
+                    size="sm"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full lg:size-lg"
                     onClick={() => {
                       if (card.cta.primary?.href.startsWith('#')) {
                         const element = document.querySelector(card.cta.primary.href)
@@ -101,12 +103,12 @@ export function CardGrid() {
                     {card.cta.primary.text}
                   </Button>
                 ) : (
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col gap-2 items-center justify-center w-full sm:flex-row sm:gap-3">
                     {card.cta.buttons?.map((button, buttonIndex) => (
                       <Button
                         key={buttonIndex}
-                        size="lg"
-                        className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full"
+                        size="sm"
+                        className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full lg:size-lg w-auto px-4 py-2"
                       >
                         {button.text}
                       </Button>
