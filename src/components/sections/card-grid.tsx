@@ -105,16 +105,31 @@ export function CardGrid() {
                   </Button>
                 ) : (
                   <div className="flex flex-col gap-2 items-center justify-center w-full sm:flex-row sm:gap-3">
-                    {card.cta.buttons?.map((button, buttonIndex) => (
-                      <Link key={buttonIndex} href={button.href}>
-                        <Button
-                          size="sm"
-                          className="bg-accent text-accent-foreground hover:bg-accent/90 font-sans rounded-full lg:size-lg w-auto px-4 py-2"
-                        >
-                          {button.text}
-                        </Button>
-                      </Link>
-                    ))}
+                    {card.cta.buttons?.map((button, buttonIndex) => {
+                      // 2nd, 3rd, and 4th cards all get glass effect
+                      const isCardWithGlassEffect = index >= 1; // Cards 2, 3, and 4 (indices 1, 2, 3)
+
+                      let buttonClasses = "font-sans rounded-full px-4 py-2 w-32"; // Fixed width for consistency
+
+                      if (isCardWithGlassEffect) {
+                        // Glass effect for 2nd, 3rd, and 4th cards
+                        buttonClasses += " bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all duration-300";
+                      } else {
+                        // Default styling for first card
+                        buttonClasses += " bg-accent text-accent-foreground hover:bg-accent/90";
+                      }
+
+                      return (
+                        <Link key={buttonIndex} href={button.href}>
+                          <Button
+                            size="sm"
+                            className={buttonClasses}
+                          >
+                            {button.text}
+                          </Button>
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>

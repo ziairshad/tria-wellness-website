@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { NavigationV2 } from '@/components/sections/navigation-v2'
+import { NavigationMobile } from '@/components/sections/navigation-mobile'
 import { FooterV2 } from '@/components/sections/footer-v2'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -71,6 +72,7 @@ export default function ContactLandingV2() {
     return (
       <div className="min-h-screen landing-v2-bg">
         <NavigationV2 />
+        <NavigationMobile />
         <div className="pt-20 px-4 min-h-screen flex items-center justify-center">
           <Card className="p-8 text-center max-w-md mx-auto">
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
@@ -92,6 +94,7 @@ export default function ContactLandingV2() {
   return (
     <div className="min-h-screen landing-v2-bg">
       <NavigationV2 />
+      <NavigationMobile />
 
       <section className="px-4 pt-24 pb-8">
         <div className="w-full">
